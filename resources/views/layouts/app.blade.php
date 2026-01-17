@@ -748,6 +748,15 @@
                 <span class="badge">24</span>
             </a>
 
+            <!-- Data Siswa -->
+
+            <a href="{{ url('/admin/siswa') }}"
+                class="nav-link {{ request()->is('admin/siswa*') ? 'active' : '' }}">
+                <i class="fas fa-users"></i> Data Siswa
+                <span class="badge">11</span>
+            </a>
+
+
             <!-- Data Produk -->
             <a href="{{ url('/admin/products') }}"
                 class="nav-link {{ request()->is('admin/products*') ? 'active' : '' }}">
@@ -799,16 +808,16 @@
                 <div class="navbar-nav ms-auto align-items-center">
                     <!-- NOTIFICATION BELL -->
                     <div class="nav-item dropdown me-3">
-                        <a class="nav-link nav-notification position-relative" 
-                           href="#" 
-                           role="button" 
-                           data-bs-toggle="dropdown" 
-                           aria-expanded="false">
+                        <a class="nav-link nav-notification position-relative"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <i class="fas fa-bell text-primary-kantin"></i>
                             <!-- Notification Badge -->
                             <span class="badge bg-danger rounded-pill notification-badge">3</span>
                         </a>
-                        
+
                         <!-- Notification Dropdown -->
                         <div class="dropdown-menu dropdown-menu-end notification-dropdown">
                             <!-- Header -->
@@ -822,7 +831,7 @@
                                     </a>
                                 </div>
                             </div>
-                            
+
                             <!-- Body -->
                             <div class="notification-body">
                                 <!-- Unread Notifications -->
@@ -850,7 +859,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="notification-item unread" data-id="2">
                                     <div class="d-flex align-items-start">
                                         <div class="notification-icon bg-warning">
@@ -875,7 +884,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Read Notifications -->
                                 <div class="notification-item" data-id="3">
                                     <div class="d-flex align-items-start">
@@ -893,7 +902,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="notification-item" data-id="4">
                                     <div class="d-flex align-items-start">
                                         <div class="notification-icon bg-info">
@@ -910,7 +919,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="notification-item" data-id="5">
                                     <div class="d-flex align-items-start">
                                         <div class="notification-icon bg-secondary">
@@ -928,7 +937,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Footer -->
                             <div class="notification-footer">
                                 <a href="#" class="btn btn-sm btn-outline-primary w-100">
@@ -941,12 +950,12 @@
                     <!-- USER MENU -->
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav-user"
-                           href="#" role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                            href="#" role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <img src="https://ui-avatars.com/api/?name=Admin+Kantin&background=28a745&color=fff&size=64"
-                                 class="user-avatar"
-                                 alt="Admin">
+                                class="user-avatar"
+                                alt="Admin">
                             <div class="user-info d-none d-md-block">
                                 <div class="user-name">Admin Kantin</div>
                                 <div class="user-role">
@@ -1127,20 +1136,20 @@
             $(document).on('click', '.mark-as-read', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 const notificationId = $(this).data('id');
                 const notificationItem = $(this).closest('.notification-item');
-                
+
                 // Remove unread styling
                 notificationItem.removeClass('unread');
-                
+
                 // Update badge count
                 updateNotificationCount(-1);
-                
+
                 // Show success feedback
                 $(this).html('<i class="fas fa-check me-1"></i>Dibaca');
                 $(this).removeClass('btn-outline-secondary').addClass('btn-success');
-                
+
                 // In real app, send AJAX request
                 // $.ajax({
                 //     url: '/api/notifications/' + notificationId + '/read',
@@ -1149,15 +1158,15 @@
                 //         console.log('Notification marked as read');
                 //     }
                 // });
-                
+
                 showToast('success', 'Notifikasi ditandai sebagai dibaca');
             });
-            
+
             // Mark all notifications as read
             $(document).on('click', '.mark-all-read', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 // Remove unread styling from all notifications
                 $('.notification-item.unread').each(function() {
                     $(this).removeClass('unread');
@@ -1166,11 +1175,11 @@
                         .removeClass('btn-outline-secondary')
                         .addClass('btn-success');
                 });
-                
+
                 // Reset badge count
                 $('.notification-badge').text('0');
                 $('.notification-badge').fadeOut();
-                
+
                 // In real app, send AJAX request
                 // $.ajax({
                 //     url: '/api/notifications/read-all',
@@ -1179,16 +1188,16 @@
                 //         console.log('All notifications marked as read');
                 //     }
                 // });
-                
+
                 showToast('success', 'Semua notifikasi telah ditandai sebagai dibaca');
             });
-            
+
             // Update notification badge count
             function updateNotificationCount(change) {
                 const badge = $('.notification-badge');
                 let currentCount = parseInt(badge.text()) || 0;
                 let newCount = currentCount + change;
-                
+
                 if (newCount <= 0) {
                     badge.text('0');
                     badge.fadeOut();
@@ -1197,7 +1206,7 @@
                         badge.fadeIn();
                     }
                     badge.text(newCount);
-                    
+
                     // Add animation for new notification
                     if (change > 0) {
                         badge.addClass('animate__animated animate__bounce');
@@ -1207,12 +1216,12 @@
                     }
                 }
             }
-            
+
             // Simulate new notification (for demo purposes)
             let notificationCounter = 5;
+
             function addDemoNotification() {
-                const notifications = [
-                    {
+                const notifications = [{
                         id: ++notificationCounter,
                         title: "Pesanan Baru",
                         message: `#ORD${100 + notificationCounter} dari pelanggan baru`,
@@ -1237,9 +1246,9 @@
                         time: "Baru saja"
                     }
                 ];
-                
+
                 const notif = notifications[Math.floor(Math.random() * notifications.length)];
-                
+
                 // Add new notification to the top
                 const newNotification = `
                     <div class="notification-item unread animate__animated animate__fadeIn" data-id="${notif.id}">
@@ -1265,10 +1274,10 @@
                         </div>
                     </div>
                 `;
-                
+
                 $('.notification-body').prepend(newNotification);
                 updateNotificationCount(1);
-                
+
                 // Show desktop notification if supported
                 if ("Notification" in window && Notification.permission === "granted") {
                     new Notification(notif.title, {
@@ -1277,14 +1286,14 @@
                     });
                 }
             }
-            
+
             // Request notification permission
             if ("Notification" in window) {
                 if (Notification.permission === "default") {
                     Notification.requestPermission();
                 }
             }
-            
+
             // ===== DELETE CONFIRMATION =====
             $(document).on('click', '.btn-delete', function(e) {
                 e.preventDefault();
