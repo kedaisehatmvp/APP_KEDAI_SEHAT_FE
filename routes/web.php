@@ -72,22 +72,38 @@ Route::prefix('admin')->name('admin.')->group(function () {
         return redirect()->route('admin.users.index')->with('success', 'User berhasil dihapus');
     })->name('users.destroy');
 
-    // Siswa CRUD Routes
+    // siswa CRUD routes
     Route::get('/siswa', function () {
         return view('admin.siswa.index');
     })->name('siswa.index');
-    
+
     Route::get('/siswa/create', function () {
         return view('admin.siswa.create');
     })->name('siswa.create');
-    
+
     Route::get('/siswa/{id}/edit', function ($id) {
-        return view('admin.siswa.edit', ['id' => $id]);
+        $user = (object)[
+            'id' => $id,
+            'nama' => 'Ahmad Budiman', 
+            'nis' => '222310101',
+            'kelas' => '10',
+            'jurusan' => 'RPL',
+            'gender' => 'L' 
+        ];
+        return view('admin.siswa.edit', compact('user', 'id'));
     })->name('siswa.edit');
+
+    Route::put('/siswa/{id}', function ($id) {
+        return redirect()->route('admin.siswa.index')->with('success', 'Data siswa berhasil diperbarui');
+    })->name('siswa.update');
 
     Route::get('/siswa/{id}/show', function ($id) {
         return view('admin.siswa.show', ['id' => $id]);
     })->name('siswa.show');
+
+    Route::delete('/siswa/{id}', function ($id) {
+        return redirect()->route('admin.siswa.index')->with('success', 'Data siswa berhasil dihapus');
+    })->name('siswa.destroy');
     
     // Products CRUD Routes
     Route::get('/products', function () {
