@@ -1,0 +1,397 @@
+        :root {
+            --primary: #001a12;
+            --primary-light: #013023;
+            --hijau: #001a12;
+            --hijau-gelap: #000c08;
+            --hijau-muda: rgba(1, 48, 35, 0.1);
+            --abu-abu: #f8f9fa;
+            --border: #dee2e6;
+            --text: #333;
+            --text-muted: #6c757d;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--abu-abu);
+            color: var(--text);
+            padding-top: 20px;
+            padding-bottom: 100px;
+        }
+
+        .header-toko {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .header-toko h2 {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .header-toko p {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .logo-toko {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden;
+            padding: 5px;
+        }
+
+        .logo-kantin {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .kartu-pesanan {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .item-makanan {
+            border-bottom: 1px dashed #eee;
+            padding: 12px 0;
+        }
+
+        .nama-item {
+            font-weight: 600;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .catatan-item {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: 'Lato', sans-serif;
+        }
+
+        .harga-item {
+            font-weight: 700;
+            color: var(--text);
+            font-family: 'Lato', sans-serif;
+        }
+
+        .total-bayar {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text);
+            padding-top: 15px;
+            border-top: 2px solid var(--border);
+            font-family: 'Lato', sans-serif;
+        }
+
+        .kartu-bayar {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .metode-bayar {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .metode-bayar:hover {
+            border-color: var(--primary);
+            background-color: rgba(1, 48, 35, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .metode-bayar.aktif {
+            border-color: var(--primary);
+            background-color: var(--hijau-muda);
+        }
+
+        .kartu-terima {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .metode-terima {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .metode-terima:hover {
+            border-color: var(--primary);
+            background-color: rgba(1, 48, 35, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .metode-terima.aktif {
+            border-color: var(--primary);
+            background-color: var(--hijau-muda);
+        }
+
+        .icon-bayar {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: #f1f3f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .icon-terima {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: rgba(1, 48, 35, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .icon-terima i {
+            font-size: 28px;
+        }
+
+        .panel-detail {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .area-detail {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .qr-code {
+            width: 220px;
+            height: 220px;
+            margin: 20px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--border);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .tombol-utama {
+            background: var(--primary);
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            transition: background 0.3s;
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .tombol-utama:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 26, 18, 0.2);
+        }
+
+        .tombol-utama:disabled {
+            background: #adb5bd;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .tombol-download {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            color: #495057;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            width: 100%;
+            max-width: 220px;
+            margin-left: 15%;
+        }
+
+        .tombol-download:hover {
+            background: #f8f9fa;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .bar-bawah {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+
+        .ewallet-option {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            height: 100%;
+        }
+
+        .ewallet-option:hover {
+            border-color: var(--primary);
+            background-color: rgba(1, 48, 35, 0.05);
+        }
+
+        .ewallet-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .ewallet-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            width: auto;
+            height: auto;
+        }
+
+        .jam-antar-container {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .jam-antar-option {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .jam-antar-option:hover {
+            background-color: var(--hijau-muda);
+            border-color: var(--primary);
+        }
+
+        .jam-antar-option.aktif {
+            background-color: var(--hijau-muda);
+            border-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .jam-terpilih {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 5px;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .icon-terima i {
+            font-size: 28px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px;
+            }
+
+            .bar-bawah {
+                display: block;
+            }
+
+            .panel-detail {
+                position: static;
+                margin-bottom: 20px;
+            }
+            
+            .tombol-utama {
+                padding: 14px;
+            }
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animasi-muncul {
+            animation: muncul 0.3s ease-out;
+        }
+        
+        /* Loading spinner */
+        .spinner-border-sm {
+            width: 1rem;
+            height: 1rem;
+            border-width: 0.2em;
+        }

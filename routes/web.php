@@ -6,13 +6,34 @@ Route::get('/', function () {
     return view('landing');
 })->name('home');
 
+// Route::get('/login', function () {
+//     return view('auth.login');
+// })->name('login');
+
+// Route::get('/register', function () {
+//     return view('auth.register');
+// })->name('register');
+
 Route::get('/login', function () {
-    return view('auth.login');
+    return view('auths.login');
 })->name('login');
 
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
+Route::get('/datalogin', function () {
+    return view('auths.datalogin');
+})->name('datalogin');
+
+Route::get('/verif', function () {
+    return view('auths.verif');
+})->name('verif');
+
+// ==================== KASIR ====================
+Route::get('/table', function () {
+    return view('kasir.table');
+})->name('table');
+
+Route::get('/form', function () {
+    return view('kasir.form');
+})->name('form');
 
 // ==================== ADMIN ROUTES ====================
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -150,7 +171,7 @@ Route::prefix('pembeli')->name('pembeli.')->group(function () {
     })->name('settings.notifications');
     
     Route::get('/landing', function () {
-        return view('pembeli.landing');
+        return view('landing');
     })->name('landing');
 });
 
@@ -163,9 +184,13 @@ Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
+Route::get('/payment', function () {
+    return view('payment.index');
+})->name('payment');
+
+Route::post('/donepay', function () {
+    return view('payment.donepay');
+})->name('donepay');
 
 Route::get('/order-history', function () {
     return view('orders');

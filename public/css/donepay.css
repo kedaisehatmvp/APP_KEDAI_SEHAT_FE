@@ -1,0 +1,241 @@
+:root {
+    --primary: #001a12;
+    --primary-light: #013023;
+    --hijau: #001a12;
+    --hijau-gelap: #000c08;
+    --hijau-muda: rgba(1, 48, 35, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ================= BASE / MOBILE ================= */
+.success-container {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.success-icon {
+    text-align: center;
+}
+.success-icon i {
+    font-size: 64px;
+    color: var(--primary);
+    background: var(--hijau-muda);
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    border-radius: 50%;
+}
+
+.success-title {
+    text-align: center;
+}
+.success-title h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Lato', sans-serif;
+}
+.success-title p {
+    color: #6c757d;
+}
+
+.kelas-info {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    background: var(--hijau-muda);
+    padding: 12px;
+    border-radius: 12px;
+}
+.kelas-info h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    font-family: 'Lato', sans-serif;
+}
+
+.order-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-label {
+    font-size: 14px;
+    color: #6c757d;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+.detail-value {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+}
+
+.items-list {
+    margin-top: 10px;
+}
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.total-section {
+    background: var(--hijau-muda);
+    padding: 20px;
+    border-radius: 14px;
+}
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    font-family: 'Lato', sans-serif;
+}
+.total-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Lato', sans-serif;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.btn {
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Lato', sans-serif;
+}
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+}
+.btn-primary:hover {
+    background: var(--primary-light);
+}
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-family: 'Lato', sans-serif;
+}
+.btn-light {
+    background: #f8f9fa;
+    color: #6c757d;
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 768px) {
+    .success-container {
+        max-width: 760px;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-areas:
+            "icon title"
+            "details details"
+            "total total"
+            "buttons buttons";
+        gap: 28px;
+    }
+
+    .success-icon { grid-area: icon; }
+    .success-title { grid-area: title; text-align: left; }
+
+    .order-details {
+        grid-area: details;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .kelas-info {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+    }
+
+    .total-section { grid-area: total; }
+    .action-buttons { grid-area: buttons; }
+}
+
+
+/* ================= DESKTOP ================= */
+@media (min-width: 992px) {
+    .success-container {
+        max-width: 920px;
+        grid-template-columns: 110px 1fr 300px;
+        grid-template-areas:
+            "icon title total"
+            "details details details"
+            "buttons buttons buttons";
+        padding: 50px;
+    }
+
+    .order-details {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+    }
+
+    .kelas-info {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        margin-bottom: 8px;
+    }
+
+    .total-section {
+        align-self: start;
+    }
+
+    .action-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.success-container {
+    animation: fadeIn .5s ease;
+}

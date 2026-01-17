@@ -1,0 +1,181 @@
+        :root {
+            --primary-color: #013023;
+            --primary-light: #015438;
+            --secondary-color: #00c896;
+            --accent-color: #ff6b6b;
+            --light-bg: #f8fff9;
+            --text-color: #2d3748;
+            --text-light: #718096;
+            --border-color: #e2e8f0;
+        }
+        
+        body {
+            background-color: #f7fafc;
+            color: var(--text-color);
+            padding-top: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .container-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            background-color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom: none;
+            padding: 1rem 1.5rem;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .card-header h5 {
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+        }
+        
+        .btn-secondary {
+            background-color: #e2e8f0;
+            border-color: #e2e8f0;
+            color: var(--text-color);
+            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #cbd5e0;
+            border-color: #cbd5e0;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(0, 200, 150, 0.1);
+        }
+        
+        .form-control:disabled, .form-control[readonly] {
+            background-color: #f8fafc;
+            border-color: #e2e8f0;
+            color: var(--text-light);
+        }
+        
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .alert {
+            border-radius: 8px;
+            border: none;
+            padding: 0.8rem 1rem;
+        }
+        
+        .alert-danger {
+            background-color: #fff5f5;
+            color: #c53030;
+        }
+        
+        .alert-success {
+            background-color: #f0fff4;
+            color: #22543d;
+        }
+        
+        .header-section {
+            background-color: var(--primary-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .header-section h2 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .section-divider {
+            margin: 1.5rem 0;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .section-divider h6 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .input-group .btn {
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .input-group .form-control {
+            border-radius: 8px 0 0 8px;
+        }
+        
+        .info-text {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 1.25rem;
+            }
+            
+            .header-section {
+                padding: 1.25rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .action-buttons .btn {
+                width: 100%;
+            }
+        }
