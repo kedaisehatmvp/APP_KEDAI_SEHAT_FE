@@ -6,11 +6,15 @@ Route::get('/', function () {
     return view('landing');
 })->name('home');
 
+Route::get('/orders', function () {
+    return view('orders');
+})->name('orders');
+
 // Route::get('/login', function () {
 //     return view('auth.login');
 // })->name('login');
 
-// Route::get('/register', function () {
+// Route::get('/register', function () {       
 //     return view('auth.register');
 // })->name('register');
 
@@ -26,15 +30,6 @@ Route::get('/verif', function () {
     return view('auths.verif');
 })->name('verif');
 
-// ==================== KASIR ====================
-Route::get('/table', function () {
-    return view('kasir.table');
-})->name('table');
-
-Route::get('/form', function () {
-    return view('kasir.form');
-})->name('form');
-
 // ==================== ADMIN ROUTES ====================
 Route::prefix('admin')->name('admin.')->group(function () {
     
@@ -42,26 +37,43 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
-    
+
     // Users CRUD Routes
     Route::get('/users', function () {
         return view('admin.users.index');
     })->name('users.index');
-    
+
     Route::get('/users/create', function () {
         return view('admin.users.create');
     })->name('users.create');
-    
+
+    Route::put('/users/{id}', function ($id) {
+        return redirect()->route('admin.users.index')->with('success', 'User berhasil diperbarui');
+    })->name('users.update');
+
     Route::get('/users/{id}/edit', function ($id) {
-        return view('admin.users.edit', ['id' => $id]);
+        $user = (object)[
+            'id' => $id,
+            'name' => 'User ' . $id,
+            'email' => 'user@example.com',
+            'phone' => '0812345678',
+            'gender' => 'male',
+            'status' => 'active',
+            'photo' => null
+        ];
+        return view('admin.users.edit', compact('user', 'id'));
     })->name('users.edit');
-    
-    Route::get('/users/{id}', function ($id) {
+
+    Route::get('/users/{id}/show', function ($id) {
         return view('admin.users.show', ['id' => $id]);
     })->name('users.show');
 
+    Route::delete('/users/{id}', function ($id) {
+        return redirect()->route('admin.users.index')->with('success', 'User berhasil dihapus');
+    })->name('users.destroy');
+
     // Siswa CRUD Routes
-    Route::get('/users', function () {
+    Route::get('/siswa', function () {
         return view('admin.siswa.index');
     })->name('siswa.index');
     
@@ -69,11 +81,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         return view('admin.siswa.create');
     })->name('siswa.create');
     
-    Route::get('/users/{id}/edit', function ($id) {
+    Route::get('/siswa/{id}/edit', function ($id) {
         return view('admin.siswa.edit', ['id' => $id]);
     })->name('siswa.edit');
-    
-    Route::get('/users/{id}', function ($id) {
+
+    Route::get('/siswa/{id}/show', function ($id) {
         return view('admin.siswa.show', ['id' => $id]);
     })->name('siswa.show');
     
@@ -171,7 +183,7 @@ Route::prefix('pembeli')->name('pembeli.')->group(function () {
     })->name('settings.notifications');
     
     Route::get('/landing', function () {
-        return view('landing');
+        return view('pembeli.landing');
     })->name('landing');
 });
 
@@ -203,6 +215,23 @@ Route::get('/products', function () {
 Route::get('/settings', function () {
     return view('pembeli.settings.index');
 })->name('settings');
+
+// ==================== KASIR ====================
+Route::get('/table', function () {
+    return view('kasir.table');
+})->name('table');
+
+Route::get('/tansaksi', function () {
+    return view('kasir.transaksi');
+})->name('transaksi');
+
+Route::get('/detail', function () {
+    return view('kasir.detail');
+})->name('detail');
+
+Route::get('/form', function () {
+    return view('kasir.form');
+})->name('form');
 
 // ==================== LAYOUT DEMO ====================
 Route::get('/dashboard', function () {
