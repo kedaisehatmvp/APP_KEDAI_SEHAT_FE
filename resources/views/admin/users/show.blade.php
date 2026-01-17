@@ -142,10 +142,7 @@
                                                 <td><strong>Tanggal Lahir</strong></td>
                                                 <td>15 Mei 1990 (33 tahun)</td>
                                             </tr>
-                                            <tr>
-                                                <td><strong>Tempat Lahir</strong></td>
-                                                <td>Jakarta</td>
-                                            </tr>
+
                                         </table>
                                     </div>
                                     <div class="col-md-6">
