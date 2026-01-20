@@ -19,15 +19,15 @@
                 <form action="#" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="row">
                         <div class="col-md-8">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nama Produk <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control form-control-kantin" id="name" name="name" 
-                                       value="Nasi Goreng Sehat" required>
+                                <input type="text" class="form-control form-control-kantin" id="name" name="name"
+                                    value="Nasi Goreng Sehat" required>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
@@ -42,33 +42,33 @@
                                         </select>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="price" class="form-label">Harga (Rp) <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control form-control-kantin" id="price" name="price" 
-                                               value="25000" min="0" required>
+                                        <input type="number" class="form-control form-control-kantin" id="price" name="price"
+                                            value="25000" min="0" required>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="stock" class="form-label">Stok <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control form-control-kantin" id="stock" name="stock" 
-                                               value="25" min="0" required>
+                                        <input type="number" class="form-control form-control-kantin" id="stock" name="stock"
+                                            value="25" min="0" required>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="min_stock" class="form-label">Stok Minimum</label>
-                                        <input type="number" class="form-control form-control-kantin" id="min_stock" name="min_stock" 
-                                               value="5" min="0">
+                                        <input type="number" class="form-control form-control-kantin" id="min_stock" name="min_stock"
+                                            value="5" min="0">
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="unit" class="form-label">Satuan</label>
@@ -82,19 +82,19 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="description" class="form-label">Deskripsi Produk</label>
-                                <textarea class="form-control form-control-kantin" id="description" name="description" 
-                                          rows="4">Nasi goreng sehat dengan tambahan sayuran organik dan protein tanpa MSG. Cocok untuk sarapan atau makan siang.</textarea>
+                                <textarea class="form-control form-control-kantin" id="description" name="description"
+                                    rows="4">Nasi goreng sehat dengan tambahan sayuran organik dan protein tanpa MSG. Cocok untuk sarapan atau makan siang.</textarea>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="ingredients" class="form-label">Bahan-bahan</label>
-                                <textarea class="form-control form-control-kantin" id="ingredients" name="ingredients" 
-                                          rows="3">Nasi, wortel, buncis, jagung, telur, bawang merah, bawang putih, minyak zaitun.</textarea>
+                                <textarea class="form-control form-control-kantin" id="ingredients" name="ingredients"
+                                    rows="3">Nasi, wortel, buncis, jagung, telur, bawang merah, bawang putih, minyak zaitun.</textarea>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="nutrition" class="form-label">Informasi Gizi (per porsi)</label>
                                 <div class="row">
@@ -125,21 +125,21 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="image" class="form-label">Gambar Produk</label>
                                 <div class="card border-dashed p-3 text-center">
-                                    <img id="imagePreview" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
-                                         class="img-fluid rounded mb-3" alt="Preview" 
-                                         style="max-height: 200px; width: 100%; object-fit: cover;">
-                                    <input type="file" class="form-control form-control-kantin image-preview" 
-                                           id="image" name="image" accept="image/*"
-                                           data-preview="#imagePreview">
+                                    <img id="imagePreview" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                        class="img-fluid rounded mb-3" alt="Preview"
+                                        style="max-height: 200px; width: 100%; object-fit: cover;">
+                                    <input type="file" class="form-control form-control-kantin image-preview"
+                                        id="image" name="image" accept="image/*"
+                                        data-preview="#imagePreview">
                                     <small class="text-muted d-block mt-2">Format: JPG, PNG, GIF. Max: 2MB</small>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label class="form-label">Tags</label>
                                 <div class="border rounded p-3">
@@ -181,7 +181,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label class="form-label">Status</label>
                                 <div class="border rounded p-3">
@@ -205,28 +205,28 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="discount" class="form-label">Diskon (%)</label>
-                                <input type="number" class="form-control form-control-kantin" id="discount" name="discount" 
-                                       value="0" min="0" max="100">
+                                <input type="number" class="form-control form-control-kantin" id="discount" name="discount"
+                                    value="0" min="0" max="100">
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="expiry_date" class="form-label">Tanggal Kadaluarsa</label>
-                                <input type="date" class="form-control form-control-kantin" id="expiry_date" name="expiry_date" 
-                                       value="{{ date('Y-m-d', strtotime('+30 days')) }}">
+                                <input type="date" class="form-control form-control-kantin" id="expiry_date" name="expiry_date"
+                                    value="{{ date('Y-m-d', strtotime('+30 days')) }}">
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="d-flex justify-content-between mt-4">
                         <div>
                             <button type="button" class="btn btn-danger btn-delete" data-id="{{ $id ?? 1 }}">
                                 <i class="fas fa-trash me-2"></i> Hapus Produk
                             </button>
                         </div>
-                        
+
                         <div class="d-flex gap-2">
                             <a href="{{ route('admin.products.index') }}" class="btn btn-kantin-outline">
                                 <i class="fas fa-arrow-left me-2"></i> Kembali
