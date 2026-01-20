@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-md-3">
         <div class="card card-kantin bg-success text-white">
             <div class="card-body">
@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-md-3">
         <div class="card card-kantin bg-warning text-white">
             <div class="card-body">
@@ -59,7 +59,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-md-3">
         <div class="card card-kantin bg-info text-white">
             <div class="card-body">
@@ -93,23 +93,23 @@
                 </thead>
                 <tbody>
                     @php
-                        $products = [
-                            ['name' => 'Salad Sehat', 'category' => 'Makanan', 'price' => 25000, 'stock' => 15, 'status' => 'active', 'rating' => 4.8],
-                            ['name' => 'Jus Wortel', 'category' => 'Minuman', 'price' => 15000, 'stock' => 30, 'status' => 'active', 'rating' => 4.5],
-                            ['name' => 'Nasi Goreng Sehat', 'category' => 'Makanan', 'price' => 28000, 'stock' => 8, 'status' => 'active', 'rating' => 4.9],
-                            ['name' => 'Smoothie Berry', 'category' => 'Minuman', 'price' => 22000, 'stock' => 0, 'status' => 'out', 'rating' => 4.7],
-                            ['name' => 'Sandwich Ayam', 'category' => 'Cemilan', 'price' => 18000, 'stock' => 12, 'status' => 'active', 'rating' => 4.3],
-                            ['name' => 'Teh Hijau', 'category' => 'Minuman', 'price' => 12000, 'stock' => 25, 'status' => 'active', 'rating' => 4.4],
-                        ];
+                    $products = [
+                    ['name' => 'Salad Sehat', 'category' => 'Makanan', 'price' => 25000, 'stock' => 15, 'status' => 'active', 'rating' => 4.8],
+                    ['name' => 'Jus Wortel', 'category' => 'Minuman', 'price' => 15000, 'stock' => 30, 'status' => 'active', 'rating' => 4.5],
+                    ['name' => 'Nasi Goreng Sehat', 'category' => 'Makanan', 'price' => 28000, 'stock' => 8, 'status' => 'active', 'rating' => 4.9],
+                    ['name' => 'Smoothie Berry', 'category' => 'Minuman', 'price' => 22000, 'stock' => 0, 'status' => 'out', 'rating' => 4.7],
+                    ['name' => 'Sandwich Ayam', 'category' => 'Cemilan', 'price' => 18000, 'stock' => 12, 'status' => 'active', 'rating' => 4.3],
+                    ['name' => 'Teh Hijau', 'category' => 'Minuman', 'price' => 12000, 'stock' => 25, 'status' => 'active', 'rating' => 4.4],
+                    ];
                     @endphp
-                    
+
                     @foreach($products as $index => $product)
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>
                             <div class="d-flex align-items-center">
-                                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
-                                     class="rounded me-2" width="40" height="40" alt="{{ $product['name'] }}">
+                                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="rounded me-2" width="40" height="40" alt="{{ $product['name'] }}">
                                 <div>
                                     <strong>{{ $product['name'] }}</strong><br>
                                     <small class="text-muted">SKU: PROD{{ 1000 + $index }}</small>
@@ -141,29 +141,29 @@
                             <div class="d-flex align-items-center">
                                 <span class="text-warning">
                                     @for($i = 1; $i <= 5; $i++)
-                                        @if($i <= floor($product['rating']))
-                                            <i class="fas fa-star"></i>
+                                        @if($i <=floor($product['rating']))
+                                        <i class="fas fa-star"></i>
                                         @elseif($i - 0.5 <= $product['rating'])
                                             <i class="fas fa-star-half-alt"></i>
-                                        @else
+                                            @else
                                             <i class="far fa-star"></i>
-                                        @endif
-                                    @endfor
+                                            @endif
+                                            @endfor
                                 </span>
                                 <small class="ms-2">{{ $product['rating'] }}</small>
                             </div>
                         </td>
                         <td class="action-buttons">
-                            <a href="{{ url('/admin/products/' . ($index + 1)) }}" 
-                               class="btn btn-sm btn-info" title="Detail">
+                            <a href="{{ url('/admin/products/' . ($index + 1)) }}"
+                                class="btn btn-sm btn-info" title="Detail">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="{{ url('/admin/products/' . ($index + 1) . '/edit') }}" 
-                               class="btn btn-sm btn-warning" title="Edit">
+                            <a href="{{ url('/admin/products/' . ($index + 1) . '/edit') }}"
+                                class="btn btn-sm btn-warning" title="Edit">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a href="{{ url('/admin/products/' . ($index + 1) . '/delete') }}" 
-                               class="btn btn-sm btn-danger btn-delete" title="Hapus">
+                            <a href="{{ url('/admin/products/' . ($index + 1) . '/delete') }}"
+                                class="btn btn-sm btn-danger btn-delete" title="Hapus">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
