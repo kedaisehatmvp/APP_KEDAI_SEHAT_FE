@@ -29,13 +29,13 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body text-center">
-                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                                     class="img-fluid rounded" 
-                                     alt="Product Image"
-                                     style="max-height: 300px; width: 100%; object-fit: cover;">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                    class="img-fluid rounded"
+                                    alt="Product Image"
+                                    style="max-height: 300px; width: 100%; object-fit: cover;">
                             </div>
                         </div>
-                        
+
                         <div class="card mb-4">
                             <div class="card-header bg-light">
                                 <h6 class="mb-0">Informasi Cepat</h6>
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Product Details -->
                     <div class="col-md-8">
                         <div class="card mb-4">
@@ -88,23 +88,23 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="text-primary mb-3">Nasi Goreng Sehat</h4>
-                                
+
                                 <div class="mb-3">
                                     <h6>Deskripsi</h6>
                                     <p class="mb-0">
-                                        Nasi goreng sehat dengan tambahan sayuran organik dan protein tanpa MSG. 
+                                        Nasi goreng sehat dengan tambahan sayuran organik dan protein tanpa MSG.
                                         Cocok untuk sarapan atau makan siang. Diolah dengan minyak zaitun dan bumbu alami.
                                     </p>
                                 </div>
-                                
+
                                 <div class="mb-3">
                                     <h6>Bahan-bahan</h6>
                                     <p class="mb-0">
-                                        Nasi, wortel, buncis, jagung, telur, bawang merah, bawang putih, minyak zaitun, 
+                                        Nasi, wortel, buncis, jagung, telur, bawang merah, bawang putih, minyak zaitun,
                                         kecap rendah gula, garam, merica.
                                     </p>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <h6>Informasi Gizi (per porsi)</h6>
@@ -147,13 +147,13 @@
                                                 <i class="fas fa-star me-1"></i>Rekomendasi
                                             </span>
                                         </div>
-                                        
+
                                         <h6 class="mt-3">Waktu Penyajian</h6>
                                         <p class="mb-0">
                                             <i class="fas fa-clock text-info me-1"></i>
                                             15-20 menit
                                         </p>
-                                        
+
                                         <h6 class="mt-3">Tanggal Dibuat</h6>
                                         <p class="mb-0">
                                             <i class="fas fa-calendar text-info me-1"></i>
@@ -163,7 +163,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Sales & Statistics -->
                         <div class="row">
                             <div class="col-md-6">
@@ -177,7 +177,7 @@
                                             <p class="mb-0">Total Penjualan</p>
                                             <small class="text-muted">30 hari terakhir</small>
                                         </div>
-                                        
+
                                         <div class="mt-3">
                                             <div class="d-flex justify-content-between mb-1">
                                                 <span>Target Penjualan</span>
@@ -187,7 +187,7 @@
                                                 <div class="progress-bar bg-success" style="width: 80%"></div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="mt-3">
                                             <div class="d-flex justify-content-between">
                                                 <div class="text-center">
@@ -207,7 +207,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-md-6">
                                 <div class="card mb-4">
                                     <div class="card-header bg-light">
@@ -224,7 +224,7 @@
                                             </div>
                                             <small class="text-muted">50% dari kapasitas maksimal</small>
                                         </div>
-                                        
+
                                         <div class="mb-3">
                                             <div class="d-flex justify-content-between mb-1">
                                                 <span>Stok Minimum</span>
@@ -235,7 +235,7 @@
                                                 Stok akan habis dalam 3 hari
                                             </div>
                                         </div>
-                                        
+
                                         <div class="mt-4">
                                             <h6>Riwayat Stok</h6>
                                             <div class="list-group list-group-flush">
@@ -260,7 +260,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Recent Orders -->
                         <div class="card">
                             <div class="card-header bg-light d-flex justify-content-between align-items-center">
@@ -282,7 +282,7 @@
                                         </thead>
                                         <tbody>
                                             @for($i = 1; $i <= 5; $i++)
-                                            <tr>
+                                                <tr>
                                                 <td>#ORD{{ sprintf('%03d', $i) }}</td>
                                                 <td>Pelanggan {{ $i }}</td>
                                                 <td>{{ $i }}</td>
@@ -297,8 +297,8 @@
                                                     @endif
                                                 </td>
                                                 <td>{{ date('d/m', strtotime("-".$i." days")) }}</td>
-                                            </tr>
-                                            @endfor
+                                                </tr>
+                                                @endfor
                                         </tbody>
                                     </table>
                                 </div>
