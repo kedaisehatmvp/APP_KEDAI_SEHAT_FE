@@ -64,13 +64,12 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>NISN</th>
+                                <th>NIS</th>
                                 <th>Nama</th>
                                 <th>Kelas</th>
-                                <th>Jurusan</th>
+                                <th>Jurusan saat ini</th>
                                 <th>No. Telepon</th>
                                 <th>Email</th>
-                                <th>Waktu ditambahkan</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -83,7 +82,6 @@
                                 <td>Teknik Mesin</td>
                                 <td>081234567890</td>
                                 <td>vers@gmail.com</td>
-                                <td>01/11/2025</td>
                                 <td>
                                     <div class="action-buttons">
                                         <a href="{{route('form')}}" class="btn btn-sm btn-outline-success">
@@ -116,20 +114,20 @@
                             <div class="mobile-value">vers@gmail.com</div>
                         </div>
                         <div class="mobile-card-item">
-                            <div class="mobile-label">NISN</div>
+                            <div class="mobile-label">NIS</div>
                             <div class="mobile-value">1234567890</div>
                         </div>
                         <div class="mobile-card-item">
-                            <div class="mobile-label">Kelas/Jurusan</div>
-                            <div class="mobile-value">X/Teknik mesin</div>
+                            <div class="mobile-label">Kelas</div>
+                            <div class="mobile-value">X</div>
+                        </div>
+                        <div class="mobile-card-item">
+                            <div class="mobile-label">Jurusan saat ini</div>
+                            <div class="mobile-value">Teknik mesin</div>
                         </div>
                         <div class="mobile-card-item">
                             <div class="mobile-label">Telepon</div>
                             <div class="mobile-value">081234567890</div>
-                        </div>
-                        <div class="mobile-card-item">
-                            <div class="mobile-label">Waktu ditambahkan</div>
-                            <div class="mobile-value">01/11/2025</div>
                         </div>
                         <div class="action-buttons mt-3">
                             <a href="detail.html" class="btn btn-sm btn-outline-primary w-100 mb-1">
