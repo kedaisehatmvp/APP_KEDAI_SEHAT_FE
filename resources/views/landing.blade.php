@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kantin Sehat - Makanan Sehat untuk Semua</title>
     
-
-
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
 
@@ -37,13 +33,13 @@
                         <a class="nav-link" href="#home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
+                        <a class="nav-link" href="#best-seller">Best Seller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">Kategori</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">Tentang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimoni</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Kontak</a>
@@ -107,7 +103,6 @@
                             <a href="/menu" class="btn-order">
                                 <i class="fas fa-shopping-cart"></i> Pesan Sekarang
                             </a>
-                            <span class="cart-badge d-none" id="cartBadge">0</span>
                         </div>
                     </li>
                 </ul>
@@ -115,293 +110,243 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1>Makanan Sehat untuk Hidup Lebih Baik</h1>
-                    <p>Kantin Sehat menyediakan berbagai pilihan makanan dan minuman sehat dengan bahan-bahan organik terbaik. Rasakan manfaat makanan sehat setiap hari!</p>
-                    <div class="hero-btns">
-                        <a href="/menu" class="btn-hero btn-hero-primary">
-                            <i class="fas fa-utensils me-2"></i> Lihat Menu
-                        </a>
-                        <a href="#about" class="btn-hero btn-hero-outline">
-                            <i class="fas fa-play-circle me-2"></i> Tentang Kami
-                        </a>
+   <!-- ===== PROMO CAROUSEL ===== -->
+<section id="home" class="promo-carousel">
+    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <a href="/menu?promo=diskon30">
+                    <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"></div>
+                    <div class="carousel-caption">
                     </div>
-                </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                        alt="Makanan Sehat"
-                        class="img-fluid rounded-circle shadow-lg"
-                        style="max-width: 400px; border: 10px solid rgba(255,255,255,0.2);">
-                </div>
+                </a>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <a href="/menu?category=menu-baru">
+                    <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"></div>
+                    <div class="carousel-caption">
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <a href="/register">
+                    <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"></div>
+                    <div class="carousel-caption">
+                    </div>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ===== FEATURES SECTION ===== -->
-    <section class="features">
+    <!-- ===== BEST SELLER SECTION ===== -->
+    <section id="best-seller" class="best-seller">
         <div class="container">
             <div class="section-title">
-                <h2>Mengapa Memilih Kantin Sehat?</h2>
-                <p>Kami berkomitmen memberikan pengalaman makan sehat terbaik untuk Anda</p>
+                <h2>Paling diminati!</h2>
+                <p>Pilihan favorit pelanggan Kantin Sehat</p>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <h4>Bahan Organik</h4>
-                        <p>Semua bahan kami berasal dari petani lokal dengan sertifikasi organik, bebas pestisida dan bahan kimia berbahaya.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h4>Menu Sehat</h4>
-                        <p>Menu kami dirancang oleh ahli gizi, rendah kalori, tinggi serat, dan penuh nutrisi untuk mendukung kesehatan Anda.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h4>Proses Cepat</h4>
-                        <p>Pesanan Anda akan siap dalam 15-20 menit dengan tetap menjaga kualitas dan kesegaran makanan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== MENU SECTION ===== -->
-    <section id="menu" class="menu">
-        <div class="container">
-            <div class="section-title">
-                <h2>Menu Populer</h2>
-                <p>Pilihan terbaik dari Kantin Sehat yang paling diminati</p>
-            </div>
-
-            <div class="row g-4">
-                <!-- Menu 1 -->
-                <div class="col-md-4">
-                    <div class="menu-card">
+                <!-- Item 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="best-seller-card">
+                        <div class="best-seller-badge">Terlaris</div>
                         <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             alt="Salad Sehat"
-                            class="menu-img">
-                        <div class="menu-content">
-                            <span class="menu-category">Makanan</span>
-                            <h5 class="menu-title">Salad Sehat Super</h5>
-                            <div class="menu-rating">
+                            class="best-seller-img">
+                        <div class="best-seller-content">
+                            <h5 class="best-seller-title">Salad Sehat Super</h5>
+                            <div class="best-seller-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
-                                <span class="ms-2">4.8</span>
+                                <span class="ms-2">4.8 (120)</span>
                             </div>
-                            <p class="menu-description">Campuran sayuran organik segar dengan dressing khusus rendah kalori.</p>
+                            <p class="best-seller-description">Campuran sayuran organik segar</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="menu-price">Rp 25.000</h4>
-                                <button class="btn-menu" onclick="addToCart(this)">
-                                    <i class="fas fa-cart-plus me-2"></i> Pesan
-                                </button>
+                                <h4 class="best-seller-price">Rp 25.000</h4>
+                                <a href="/menu" class="btn-best-seller" onclick="addToCart(this)">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Menu 2 -->
-                <div class="col-md-4">
-                    <div class="menu-card">
+                <!-- Item 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="best-seller-card">
+                        <div class="best-seller-badge">Populer</div>
                         <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             alt="Jus Buah"
-                            class="menu-img">
-                        <div class="menu-content">
-                            <span class="menu-category minuman">Minuman</span>
-                            <h5 class="menu-title">Jus Detox Mix</h5>
-                            <div class="menu-rating">
+                            class="best-seller-img">
+                        <div class="best-seller-content">
+                            <h5 class="best-seller-title">Jus Detox Mix</h5>
+                            <div class="best-seller-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <span class="ms-2">5.0</span>
+                                <span class="ms-2">5.0 (98)</span>
                             </div>
-                            <p class="menu-description">Campuran buah-buahan organik tanpa gula tambahan, kaya vitamin.</p>
+                            <p class="best-seller-description">Campuran buah organik tanpa gula</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="menu-price">Rp 18.000</h4>
-                                <button class="btn-menu" onclick="addToCart(this)">
-                                    <i class="fas fa-cart-plus me-2"></i> Pesan
-                                </button>
+                                <h4 class="best-seller-price">Rp 18.000</h4>
+                                <a href="/menu" class="btn-best-seller" onclick="addToCart(this)">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Menu 3 -->
-                <div class="col-md-4">
-                    <div class="menu-card">
+                <!-- Item 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="best-seller-card">
                         <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             alt="Nasi Goreng Sehat"
-                            class="menu-img">
-                        <div class="menu-content">
-                            <span class="menu-category">Makanan</span>
-                            <h5 class="menu-title">Nasi Goreng Sehat</h5>
-                            <div class="menu-rating">
+                            class="best-seller-img">
+                        <div class="best-seller-content">
+                            <h5 class="best-seller-title">Nasi Goreng Sehat</h5>
+                            <div class="best-seller-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
-                                <span class="ms-2">4.5</span>
+                                <span class="ms-2">4.5 (85)</span>
                             </div>
-                            <p class="menu-description">Nasi merah dengan sayuran organik dan protein rendah lemak.</p>
+                            <p class="best-seller-description">Nasi merah dengan sayuran organik</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="menu-price">Rp 28.000</h4>
-                                <button class="btn-menu" onclick="addToCart(this)">
-                                    <i class="fas fa-cart-plus me-2"></i> Pesan
-                                </button>
+                                <h4 class="best-seller-price">Rp 28.000</h4>
+                                <a href="/menu" class="btn-best-seller" onclick="addToCart(this)">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="best-seller-card">
+                        <div class="best-seller-badge">Baru</div>
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Paket Makan Siang"
+                            class="best-seller-img">
+                        <div class="best-seller-content">
+                            <h5 class="best-seller-title">Paket Makan Siang</h5>
+                            <div class="best-seller-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ms-2">4.7 (65)</span>
+                            </div>
+                            <p class="best-seller-description">Makan lengkap + minuman sehat</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="best-seller-price">Rp 35.000</h4>
+                                <a href="/menu" class="btn-best-seller" onclick="addToCart(this)">
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="text-center mt-5">
-                <a href="/menu" class="btn-order" style="padding: 15px 40px;">
-                    <i class="fas fa-utensils me-2"></i> Lihat Semua Menu
-                </a>
-            </div>
+                <div class="text-center mt-4">
+                    <a href="/menu" class="btn-view-more">
+                        Lihat Semua Menu
+                    </a>
+                </div>
         </div>
     </section>
 
-    <!-- ===== TESTIMONIALS SECTION ===== -->
-    <section id="testimonials" class="testimonials">
+    <!-- ===== CATEGORIES SECTION ===== -->
+    <section id="categories" class="categories">
         <div class="container">
             <div class="section-title">
-                <h2>Apa Kata Pelanggan Kami?</h2>
-                <p>Testimoni dari mereka yang telah merasakan manfaat Kantin Sehat</p>
+                <h2>Lagi pengen apa hari ini?</h2>
+                <p>Pilih kategori yang sesuai dengan kebutuhan Anda</p>
             </div>
 
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg"
-                                alt="Sarah"
-                                class="testimonial-avatar">
-                            <div class="testimonial-info">
-                                <h5>Sarah Wijaya</h5>
-                                <p>Mahasiswa</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Sejak makan di Kantin Sehat, energi saya meningkat drastis. Menu sehatnya enak dan terjangkau untuk mahasiswa!"</p>
+            <!-- Ganti dengan struktur grid CSS untuk 3 kolom di mobile -->
+            <div class="categories-grid">
+                <!-- Item 1 -->
+                <a href="/menu?category=makanan" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <img src="https://randomuser.me/api/portraits/men/54.jpg"
-                                alt="Budi"
-                                class="testimonial-avatar">
-                            <div class="testimonial-info">
-                                <h5>Budi Santoso</h5>
-                                <p>Karyawan Kantor</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p>"Lunch time jadi lebih sehat dengan Kantin Sehat. Berat badan turun 5kg dalam 2 bulan tanpa diet ketat!"</p>
+                    <div class="category-content">
+                        <h4>Makanan Sehat</h4>
+                        <span class="category-count">25+ Menu</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg"
-                                alt="Rina"
-                                class="testimonial-avatar">
-                            <div class="testimonial-info">
-                                <h5>Rina Melati</h5>
-                                <p>Ibu Rumah Tangga</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Anak-anak saya yang sulit makan sayur sekarang suka salad dari Kantin Sehat. Resepnya kreatif dan sehat!"</p>
+                <!-- Item 2 -->
+                <a href="/menu?category=minuman" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-glass-martini-alt"></i>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ABOUT SECTION ===== -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="about-img">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Tentang Kantin Sehat">
+                    <div class="category-content">
+                        <h4>Minuman Sehat</h4>
+                        <span class="category-count">15+ Menu</span>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3>Tentang Kantin Sehat</h3>
-                        <p>Kantin Sehat didirikan pada tahun 2020 dengan misi untuk menyediakan makanan sehat yang terjangkau bagi semua kalangan. Kami percaya bahwa makanan sehat adalah investasi terbaik untuk masa depan.</p>
+                </a>
 
-                        <ul class="about-features">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <strong>Bahan Organik:</strong> Semua bahan berasal dari petani lokal terpercaya
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <strong>Ahli Gizi:</strong> Menu dirancang oleh ahli gizi bersertifikat
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <strong>Harga Terjangkau:</strong> Makanan sehat untuk semua kalangan
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <strong>Lingkungan Ramah:</strong> Mengurangi plastik dan limbah makanan
-                            </li>
-                        </ul>
-
-                        <a href="#contact" class="btn-order mt-4">
-                            <i class="fas fa-comments me-2"></i> Hubungi Kami
-                        </a>
+                <!-- Item 3 -->
+                <a href="/menu?category=cemilan" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cookie-bite"></i>
                     </div>
-                </div>
+                    <div class="category-content">
+                        <h4>Cemilan Sehat</h4>
+                        <span class="category-count">12+ Menu</span>
+                    </div>
+                </a>
+
+                <!-- Item 4 -->
+                <a href="/menu?category=paket" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="category-content">
+                        <h4>Paket Hemat</h4>
+                        <span class="category-count">8+ Paket</span>
+                    </div>
+                </a>
+
+                <!-- Item 5 -->
+                <a href="/menu?category=vegan" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="category-content">
+                        <h4>Menu Vegan</h4>
+                        <span class="category-count">10+ Menu</span>
+                    </div>
+                </a>
+
+                <!-- Item 6 -->
+                <a href="/menu?category=spesial" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="category-content">
+                        <h4>Menu Spesial</h4>
+                        <span class="category-count">5+ Menu</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -595,9 +540,8 @@
                     <h5>Menu Cepat</h5>
                     <ul class="footer-links">
                         <li><a href="#home">Beranda</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#about">Tentang Kami</a></li>
-                        <li><a href="#testimonials">Testimoni</a></li>
+                        <li><a href="#best-seller">Best Seller</a></li>
+                        <li><a href="#categories">Kategori</a></li>
                         <li><a href="#contact">Kontak</a></li>
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Daftar</a></li>
@@ -607,11 +551,11 @@
                 <div class="col-lg-3">
                     <h5>Kategori Menu</h5>
                     <ul class="footer-links">
-                        <li><a href="#">Makanan Sehat</a></li>
-                        <li><a href="#">Minuman Organik</a></li>
-                        <li><a href="#">Cemilan Sehat</a></li>
-                        <li><a href="#">Paket Makan Siang</a></li>
-                        <li><a href="#">Menu Hari Ini</a></li>
+                        <li><a href="/menu?category=makanan">Makanan Sehat</a></li>
+                        <li><a href="/menu?category=minuman">Minuman Organik</a></li>
+                        <li><a href="/menu?category=cemilan">Cemilan Sehat</a></li>
+                        <li><a href="/menu?category=paket">Paket Makan Siang</a></li>
+                        <li><a href="/menu?category=spesial">Menu Spesial</a></li>
                     </ul>
                 </div>
 
@@ -635,10 +579,8 @@
     <!-- ===== SCRIPTS ===== -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <!-- Custom JS -->
     <script src="{{ asset('js/landing.js')}}"></script>
 </body>
