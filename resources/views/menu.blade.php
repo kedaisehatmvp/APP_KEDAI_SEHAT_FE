@@ -81,6 +81,7 @@
                             </li>
                         </ul>
                     </div>
+
                     
                     <!-- Login Button -->
                     <div id="loginButton" class="d-none">
@@ -89,13 +90,50 @@
                         </a>
                     </div>
                     
-                    <li class="nav-item ms-3 position-relative">
+                  
+                    
+                    <li class="nav-item ms-2 position-relative">
                         <button class="btn-order" id="cartToggle">
                             <i class="fas fa-shopping-cart"></i> Keranjang
                             <span class="cart-badge" id="cartCount">0</span>
                         </button>
                     </li>
+
+                      <!-- History Dropdown (Menu Sering Dibeli) -->
+                    <li class="nav-item dropdown ms-2" id="historyDropdown">
+                        <button class="btn btn-transparent dropdown-toggle position-relative" 
+                                type="button" 
+                                id="frequentMenuToggle" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                                title="Menu Sering Dibeli">
+                            <i class="fas fa-history"></i>
+                            <span class="frequent-badge" id="frequentBadge">0</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end frequent-menu-dropdown shadow" 
+                             aria-labelledby="frequentMenuToggle">
+                            <div class="frequent-menu-header">
+                                <h6><i class="fas fa-history me-2"></i>Menu Sering Dibeli</h6>
+                                <button class="btn-clear-history" onclick="clearFrequentMenus()" title="Hapus Semua">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                            <div class="frequent-menu-body" id="frequentMenuBody">
+                                <!-- Frequent menu items will be loaded here -->
+                                <div class="frequent-menu-empty">
+                                    <i class="fas fa-clock"></i>
+                                    <p>Belum ada riwayat pembelian</p>
+                                </div>
+                            </div>
+                            <div class="frequent-menu-footer">
+                                <button class="btn-view-all" onclick="viewAllFrequentMenus()">
+                                    <i class="fas fa-list me-1"></i> Lihat Semua
+                                </button>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
+                
             </div>
             
             <!-- Mobile Header (Profile + Cart) -->
@@ -148,12 +186,39 @@
                     </a>
                 </div>
                 
-                <!-- Cart Button (Mobile) -->
-                <div class="position-relative ms-2">
-                    <button class="btn-transparent" id="mobileCartToggle">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-badge" id="mobileCartCount">0</span>
+            
+
+                <!-- History Dropdown (Mobile) -->
+                <div class="dropdown position-relative ms-2">
+                    <button class="btn-transparent dropdown-toggle" 
+                            type="button" 
+                            id="mobileFrequentMenuToggle" 
+                            data-bs-toggle="dropdown" 
+                            aria-expanded="false">
+                        <i class="fas fa-history"></i>
+                        <span class="frequent-badge" id="mobileFrequentBadge">0</span>
                     </button>
+                    <div class="dropdown-menu dropdown-menu-end frequent-menu-dropdown shadow" 
+                         aria-labelledby="mobileFrequentMenuToggle">
+                        <div class="frequent-menu-header">
+                            <h6><i class="fas fa-history me-2"></i>Menu Sering Dibeli</h6>
+                            <button class="btn-clear-history" onclick="clearFrequentMenus()" title="Hapus Semua">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                        <div class="frequent-menu-body" id="mobileFrequentMenuBody">
+                            <!-- Frequent menu items will be loaded here -->
+                            <div class="frequent-menu-empty">
+                                <i class="fas fa-clock"></i>
+                                <p>Belum ada riwayat pembelian</p>
+                            </div>
+                        </div>
+                        <div class="frequent-menu-footer">
+                            <button class="btn-view-all" onclick="viewAllFrequentMenus()">
+                                <i class="fas fa-list me-1"></i> Lihat Semua
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -271,7 +336,7 @@
             <a href="#" class="bottom-bar-item" id="bottomBarCartToggle">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Keranjang</span>
-                <span class="cart-badge" id="bottomBarCartCount">0</span>
+                <span class="cart-badge" style="right: 20px;" id="bottomBarCartCount">0</span>
             </a>
         </div>
     </div>
