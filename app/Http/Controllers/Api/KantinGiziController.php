@@ -39,7 +39,8 @@ class KantinGiziController extends Controller
             'lemak' => 'nullable|numeric|min:0',
             'serat' => 'nullable|numeric|min:0',
             'protein' => 'nullable|numeric|min:0',
-            'karbohidrat' => 'nullable|numeric|min:0'
+            'karbohidrat' => 'nullable|numeric|min:0',
+            'gula' => 'nullable|numeric|min:0'
         ]);
 
         if ($validator->fails()) {
@@ -112,7 +113,8 @@ class KantinGiziController extends Controller
             'lemak' => 'nullable|numeric|min:0',
             'serat' => 'nullable|numeric|min:0',
             'protein' => 'nullable|numeric|min:0',
-            'karbohidrat' => 'nullable|numeric|min:0'
+            'karbohidrat' => 'nullable|numeric|min:0',
+            'gula' => 'nullable|numeric|min:0'
         ]);
 
         if ($validator->fails()) {

@@ -85,7 +85,8 @@ class KantinSeeder extends Seeder
                     'lemak' => rand(5, 20) + (rand(0, 99) / 100),
                     'serat' => rand(1, 10) + (rand(0, 99) / 100),
                     'protein' => rand(10, 30) + (rand(0, 99) / 100),
-                    'karbohidrat' => rand(30, 70) + (rand(0, 99) / 100)
+                    'karbohidrat' => rand(30, 70) + (rand(0, 99) / 100),
+                    'gula' => $this->getRandomValues(5, 30)
                 ]);
             }
         }

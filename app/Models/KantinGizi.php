@@ -24,7 +24,8 @@ class KantinGizi extends Model
         'lemak',
         'serat',
         'protein',
-        'karbohidrat'
+        'karbohidrat',
+        'gula'
     ];
 
     // Casting
@@ -33,7 +34,8 @@ class KantinGizi extends Model
         'lemak' => 'decimal:2',
         'serat' => 'decimal:2',
         'protein' => 'decimal:2',
-        'karbohidrat' => 'decimal:2'
+        'karbohidrat' => 'decimal:2',
+        'gula' => 'decimal:2'
     ];
 
     // Relationship dengan KantinMenu (Belongs To)
