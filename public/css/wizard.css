@@ -1,0 +1,827 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(135deg, #001a12 0%, #013023 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container-wizard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+    position: relative;
+    z-index: 2;
+    padding: 20px 15px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Header */
+.header-wizard {
+    text-align: center;
+    padding: 10px 0 20px;
+    flex-shrink: 0;
+}
+
+.brand-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-kantin {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.brand-title h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+/* Wizard Container */
+.wizard-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-height: calc(100vh - 150px);
+    width: 100%;
+}
+
+/* Progress Steps - DIPERBAIKI: Lebih simetris */
+.progress-wrapper {
+    padding: 15px 0 25px;
+    flex-shrink: 0;
+}
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 5px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    max-width: 90px;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid transparent;
+    overflow: hidden;
+}
+
+.step-number {
+    font-size: 18px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.step-icon {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step.active .step-circle {
+    background: #013023;
+    transform: scale(1.05);
+    border-color: #001a12;
+    box-shadow: 0 0 0 4px rgba(1, 48, 35, 0.15);
+}
+
+.step.active .step-number {
+    color: white;
+}
+
+.step.completed .step-circle {
+    background: #2e7d32;
+    border-color: #1b5e20;
+}
+
+.step.completed .step-number {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.step.completed .step-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #999;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    transition: color 0.3s ease;
+}
+
+.step.active .step-label {
+    color: #013023;
+    font-weight: 700;
+}
+
+.step.completed .step-label {
+    color: #2e7d32;
+}
+
+.step-connector {
+    flex: 1;
+    height: 3px;
+    background: #e0e0e0;
+    margin: 0 2px;
+    position: relative;
+    z-index: 1;
+    max-width: 40px;
+    transition: all 0.4s ease;
+}
+
+.step-connector.active {
+    background: #fffb00;
+    box-shadow: 0 0 5px rgba(255, 230, 0, 0.3);
+}
+
+.step-connector.completed {
+    background: #fffb00;
+}
+
+/* Form Card - DIPERBAIKI: Button di dalam form */
+.form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px 25px 30px; /* Ditambah padding bawah untuk button */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.step-content {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    animation: fadeInUp 0.4s ease;
+}
+
+.step-content.active {
+    display: flex;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.step-title {
+    color: #001a12;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.warning-text {
+    color: #d32f2f;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+    flex-shrink: 0;
+}
+
+/* Form Group */
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 5px;
+    padding-bottom: 10px; /* Ruang untuk button */
+}
+
+.form-group::-webkit-scrollbar {
+    width: 4px;
+}
+
+.form-group::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.form-group::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.form-group::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Input Styles - DIPERBAIKI: Label animation lebih baik */
+.input-area {
+    position: relative;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+}
+
+.input-field {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #013023;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(1, 48, 35, 0.1);
+    padding-top: 20px; /* Ruang untuk label */
+    padding-bottom: 12px;
+}
+
+/* DIPERBAIKI: Label positioning yang lebih baik */
+.input-label {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    font-size: 15px;
+    color: #666;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    background: transparent;
+    transform-origin: left center;
+}
+
+/* Label saat focus atau input terisi */
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+    top: 8px;
+    left: 18px;
+    font-size: 12px;
+    color: #013023;
+    font-weight: 600;
+    transform: translateY(0) scale(0.9);
+}
+
+.input-field:not(:placeholder-shown) {
+    padding-top: 20px;
+    padding-bottom: 12px;
+}
+
+.date-input {
+    color: #333;
+    cursor: pointer;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.date-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+/* OTP Info */
+.otp-info {
+    margin: 15px 0 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.otp-timer {
+    font-size: 13px;
+    color: #666;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#countdown {
+    font-weight: 700;
+    color: #013023;
+}
+
+.btn-resend {
+    background: transparent;
+    border: 2px solid #013023;
+    color: #013023;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-resend:not(:disabled):hover {
+    background: #013023;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-resend:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #999;
+    color: #999;
+}
+
+/* Button Group - DIPERBAIKI: Di dalam form dan simetris */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.btn-prev,
+.btn-next,
+.btn-submit {
+    flex: 1;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Lato', sans-serif;
+    min-height: 48px;
+}
+
+.btn-prev {
+    background: #f5f5f5;
+    color: #666;
+    border: 2px solid #e0e0e0;
+}
+
+.btn-prev:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-next {
+    background: linear-gradient(135deg, #001a12 0%, #013023 100%);
+    color: white;
+}
+
+.btn-next:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(1, 48, 35, 0.3);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #013023 0%, #001a12 100%);
+    color: white;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(46, 125, 50, 0.3);
+}
+
+/* Bottom Element */
+.elemen-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gambar-bawah {
+    width: 100%;
+    max-width: 600px;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .container-wizard {
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 25px 20px;
+    }
+    
+    .brand-title {
+        margin-bottom: 10px;
+    }
+    
+    .logo-kantin {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .brand-title h1 {
+        font-size: 26px;
+    }
+    
+    .step {
+        max-width: 100px;
+    }
+    
+    .step-circle {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .step-number {
+        font-size: 20px;
+    }
+    
+    .step-icon {
+        font-size: 22px;
+    }
+    
+    .step-label {
+        font-size: 12px;
+    }
+    
+    .step-connector {
+        max-width: 60px;
+        margin: 0 5px;
+    }
+    
+    .form-card {
+        padding: 30px 30px 35px;
+        max-width: 440px;
+        width: 100%;
+    }
+    
+    .step-title {
+        font-size: 22px;
+    }
+    
+    .input-field {
+        padding: 18px 20px;
+        font-size: 16px;
+    }
+    
+    .input-field:focus,
+    .input-field:not(:placeholder-shown) {
+        padding-top: 22px;
+        padding-bottom: 14px;
+    }
+    
+    .input-label {
+        top: 20px;
+        left: 20px;
+        font-size: 16px;
+    }
+    
+    .input-field:focus + .input-label,
+    .input-field:not(:placeholder-shown) + .input-label {
+        top: 10px;
+        left: 20px;
+        font-size: 13px;
+    }
+    
+    .button-group {
+        gap: 15px;
+    }
+    
+    .btn-prev,
+    .btn-next,
+    .btn-submit {
+        padding: 16px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container-wizard {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .form-card {
+        padding: 20px 20px 25px;
+        max-width: 100%;
+        border-radius: 16px;
+    }
+    
+    .step {
+        max-width: 80px;
+    }
+    
+    .step-connector {
+        max-width: 30px;
+        margin: 0 1px;
+    }
+}
+
+@media (max-width: 380px) {
+    .container-wizard {
+        padding: 12px 10px;
+    }
+    
+    .logo-kantin {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .brand-title h1 {
+        font-size: 22px;
+    }
+    
+    .step {
+        max-width: 70px;
+    }
+    
+    .step-circle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .step-number {
+        font-size: 16px;
+    }
+    
+    .step-icon {
+        font-size: 18px;
+    }
+    
+    .step-label {
+        font-size: 10px;
+    }
+    
+    .step-connector {
+        max-width: 25px;
+        margin: 0;
+    }
+    
+    .form-card {
+        padding: 18px 18px 23px;
+        border-radius: 14px;
+    }
+    
+    .step-title {
+        font-size: 18px;
+    }
+    
+    .input-field {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+    
+    .input-field:focus,
+    .input-field:not(:placeholder-shown) {
+        padding-top: 18px;
+        padding-bottom: 10px;
+    }
+    
+    .input-label {
+        top: 14px;
+        left: 16px;
+        font-size: 14px;
+    }
+    
+    .input-field:focus + .input-label,
+    .input-field:not(:placeholder-shown) + .input-label {
+        top: 6px;
+        left: 16px;
+        font-size: 11px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Loading State */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #013023;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animasi tambahan untuk smooth transition */
+.input-field:focus + .input-label {
+    transform: translateY(0) scale(0.9);
+}
+
+.input-field:not(:focus):not(:placeholder-shown) + .input-label {
+    transform: translateY(0) scale(0.9);
+    color: #666;
+}
+
+
+/* Show/Hide PIN Icon */
+.toggle-pin-visibility {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #666;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 0.6;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.toggle-pin-visibility:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.05);
+    color: #013023;
+}
+
+.toggle-pin-visibility:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.toggle-pin-visibility i {
+    font-size: 18px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-pin-visibility.active i {
+    transform: scale(1.1);
+}
+
+.toggle-pin-visibility .fa-eye-slash {
+    color: #013023;
+}
+
+/* Animation for icon */
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.toggle-pin-visibility:active i {
+    animation: iconPulse 0.3s ease;
+}
+
+/* Adjust input padding to accommodate icon */
+.input-area {
+    position: relative;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+}
+
+/* Tambahkan padding kanan untuk input PIN agar tidak tertutup icon */
+#pinInput {
+    padding-right: 50px;
+}
+
+/* Pastikan label tetap di posisi yang benar */
+#pinInput:focus + .input-label,
+#pinInput:not(:placeholder-shown) + .input-label {
+    top: 8px;
+    left: 18px;
+    font-size: 12px;
+    color: #013023;
+    font-weight: 600;
+    transform: translateY(0) scale(0.9);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    #pinInput:focus + .input-label,
+    #pinInput:not(:placeholder-shown) + .input-label {
+        top: 10px;
+        left: 20px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+    .toggle-pin-visibility {
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .toggle-pin-visibility i {
+        font-size: 16px;
+    }
+    
+    #pinInput {
+        padding-right: 45px;
+    }
+}
