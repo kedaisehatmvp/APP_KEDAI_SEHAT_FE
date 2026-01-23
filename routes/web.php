@@ -18,6 +18,10 @@ Route::get('/login', function () {
     return view('auths.login');
 })->name('login');
 
+Route::get('/wizard', function () {
+    return view('auths.wizard');
+})->name('wizard');
+
 Route::get('/datalogin', function () {
     return view('auths.datalogin');
 })->name('datalogin');
