@@ -40,6 +40,7 @@
                         <a class="nav-link active" href="/order-history">Pesanan</a>
                     </li>
                     
+                    
                     <!-- Profile Dropdown -->
                     <div class="dropdown">
                         <button class="btn btn-transparent dropdown-toggle" 
@@ -89,6 +90,21 @@
                             <i class="fas fa-shopping-cart"></i> Pesan
                         </a>
                     </li>
+                    <!-- Tambahkan ini di navbar desktop (setelah menu Pesanan) -->
+<li class="nav-item">
+    <a class="nav-link" href="/rating">
+        <button class="btn btn-primary btn-sm me-2" style="font-family: 'Lato', sans-serif;">
+            <i class="fas fa-star me-1"></i> Rating
+        </button>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="/report">
+        <button class="btn btn-danger btn-sm" style="font-family: 'Lato', sans-serif;">
+            <i class="fas fa-flag me-1"></i> Report
+        </button>
+    </a>
+</li>
                 </ul>
             </div>
             

@@ -1,0 +1,285 @@
+:root {
+    --primary: #001a12;
+    --primary-dark: #013023;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 30px;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, var(--danger), #c82333);
+    color: white;
+    padding: 40px 0;
+}
+
+.btn-back {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-3px);
+}
+
+/* Step Cards (sama seperti rating.css) */
+.step-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    opacity: 0.5;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+
+.step-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-header {
+    padding: 20px 20px 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: var(--danger);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.step-title {
+    margin: 0;
+    font-weight: 700;
+}
+
+.step-body {
+    padding: 20px;
+}
+
+/* Food Items */
+.food-item {
+    cursor: pointer;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s;
+    background: white;
+}
+
+.food-item:hover {
+    border-color: var(--danger);
+    transform: translateY(-2px);
+}
+
+.food-item.selected {
+    border-color: var(--danger);
+    background: rgba(220, 53, 69, 0.05);
+}
+
+.food-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.food-name {
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.food-price {
+    font-weight: 600;
+    color: #28a745;
+}
+
+/* Buttons */
+.btn-next, .btn-submit {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-next:hover, .btn-submit:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-next:disabled, .btn-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-back-step {
+    background: white;
+    color: var(--danger);
+    border: 2px solid var(--danger);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-back-step:hover {
+    background: rgba(220, 53, 69, 0.05);
+}
+
+/* Problem Types */
+.problem-type-option {
+    cursor: pointer;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+    background: white;
+}
+
+.problem-type-option:hover {
+    border-color: #ffc107;
+    background: rgba(255, 193, 7, 0.05);
+}
+
+.problem-type-option.selected {
+    border-color: var(--danger);
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.problem-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #666;
+}
+
+.problem-type-option.selected .problem-icon {
+    color: var(--danger);
+}
+
+/* File Upload */
+.file-upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #f8f9fa;
+}
+
+.file-upload-area:hover {
+    border-color: var(--danger);
+    background: rgba(220, 53, 69, 0.05);
+}
+
+.file-preview {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.file-preview img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.remove-file {
+    margin-left: auto;
+    color: var(--danger);
+    cursor: pointer;
+}
+
+/* Description */
+.description-section textarea {
+    resize: none;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s;
+}
+
+.description-section textarea:focus {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+#charCount {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Success Card */
+.success-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #28a745;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .report-header {
+        padding: 30px 0;
+    }
+    
+    .food-img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .step-body {
+        padding: 15px;
+    }
+    
+    .btn-next, .btn-submit, .btn-back-step {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+    }
+}

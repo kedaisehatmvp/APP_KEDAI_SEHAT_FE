@@ -18,6 +18,10 @@ Route::get('/login', function () {
     return view('auths.login');
 })->name('login');
 
+Route::get('/wizard', function () {
+    return view('auths.wizard');
+})->name('wizard');
+
 Route::get('/datalogin', function () {
     return view('auths.datalogin');
 })->name('datalogin');
@@ -25,6 +29,14 @@ Route::get('/datalogin', function () {
 Route::get('/verif', function () {
     return view('auths.verif');
 })->name('verif');
+
+Route::get('/rating', function () {
+    return view('rating');
+});
+
+Route::get('/report', function () {
+    return view('report');
+});
 
 // ==================== KASIR ====================
 Route::get('/table', function () {
