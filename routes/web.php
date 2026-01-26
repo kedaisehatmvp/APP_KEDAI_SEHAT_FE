@@ -42,7 +42,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/users', function () {
         return view('admin.users.index');
     })->name('users.index');
-
+    
     Route::get('/users/create', function () {
         return view('admin.users.create');
     })->name('users.create');
@@ -121,7 +121,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/products/{id}', function ($id) {
         return view('admin.products.show', ['id' => $id]);
     })->name('products.show');
-    
+
+    // Gizi CRUD Routes
+    Route::get('/gizi', function () {
+        return view('admin.gizi.index');
+    })->name('gizi.index');
+
+  
+
     // Orders Management
     Route::get('/orders', function () {
         return view('admin.orders.index');
@@ -250,7 +257,7 @@ Route::get('/form', function () {
 })->name('form');
 
 // ==================== LAYOUT DEMO ====================
-Route::get('/dashboard', function () {
+Route::get('/layout', function () {
     return view('layouts.app');
 })->name('layout.demo');
 
