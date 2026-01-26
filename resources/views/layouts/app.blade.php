@@ -736,7 +736,7 @@
 
         <nav class="nav flex-column mt-4">
             <!-- Dashboard -->
-            <a href="{{ url('/admin/dashboard') }}"
+            <a href="{{ url('/dashboard') }}"
                 class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}">
                 <i class="fas fa-tachometer-alt"></i> Dashboard
             </a>
@@ -762,6 +762,13 @@
                 class="nav-link {{ request()->is('admin/products*') ? 'active' : '' }}">
                 <i class="fas fa-utensils"></i> Data Produk
                 <span class="badge">28</span>
+            </a>
+
+            <!-- Data Info Gizi -->
+            <a href="{{ url('/admin/gizi') }}"
+                class="nav-link {{ request()->is('admin/gizi*') ? 'active' : '' }}">
+                <i class="fas fa-utensils"></i> Data Info Gizi
+                <span class="badge">10</span>
             </a>
 
             <!-- Data Pesanan -->
