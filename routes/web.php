@@ -30,13 +30,7 @@ Route::get('/verif', function () {
     return view('auths.verif');
 })->name('verif');
 
-Route::get('/rating', function () {
-    return view('rating');
-});
 
-Route::get('/report', function () {
-    return view('report');
-});
 
 // ==================== KASIR ====================
 Route::get('/table', function () {
@@ -185,7 +179,17 @@ Route::prefix('pembeli')->name('pembeli.')->group(function () {
     Route::get('/landing', function () {
         return view('landing');
     })->name('landing');
+
+    Route::get('/rating', function () {
+    return view('rating');
+    });
+
+    Route::get('/report', function () {
+        return view('report');
+    });
 });
+
+
 
 // ==================== PUBLIC ROUTES ====================
 Route::get('/menu', function () {

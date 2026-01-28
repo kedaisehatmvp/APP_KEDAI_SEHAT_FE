@@ -18,6 +18,7 @@ const completedOrders = [
     }
 ];
 
+
 // State variables
 let selectedFood = null;
 let selectedRating = 0;

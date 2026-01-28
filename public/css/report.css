@@ -11,6 +11,7 @@ body {
     padding-bottom: 30px;
 }
 
+
 /* Header */
 .report-header {
     background: linear-gradient(135deg, var(--danger), #c82333);

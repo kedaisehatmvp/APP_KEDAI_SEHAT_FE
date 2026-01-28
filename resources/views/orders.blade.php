@@ -85,78 +85,94 @@
                         </ul>
                     </div>
                     
+                    
+                    <!-- Tambahkan ini di navbar desktop (setelah menu Pesanan) -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rating">
+                            <button class="btn btn-primary btn-sm me-2" style="font-family: 'Lato', sans-serif;">
+                                <i class="fas fa-star me-1"></i> Rating
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/report">
+                            <button class="btn btn-danger btn-sm" style="font-family: 'Lato', sans-serif;">
+                                <i class="fas fa-flag me-1"></i> Report
+                            </button>
+                        </a>
+                    </li>
+
                     <li class="nav-item ms-3">
                         <a href="/menu" class="btn-order">
                             <i class="fas fa-shopping-cart"></i> Pesan
                         </a>
-                    </li>
-                    <!-- Tambahkan ini di navbar desktop (setelah menu Pesanan) -->
-<li class="nav-item">
-    <a class="nav-link" href="/rating">
-        <button class="btn btn-primary btn-sm me-2" style="font-family: 'Lato', sans-serif;">
-            <i class="fas fa-star me-1"></i> Rating
-        </button>
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="/report">
-        <button class="btn btn-danger btn-sm" style="font-family: 'Lato', sans-serif;">
-            <i class="fas fa-flag me-1"></i> Report
-        </button>
-    </a>
-</li>
+                    </li>   
                 </ul>
             </div>
             
             <!-- Mobile Header (Profile + Order) -->
-            <div class="d-flex align-items-center d-lg-none">
-                <!-- Profile Dropdown (Mobile) -->
-                <div class="dropdown">
-                    <button class="btn btn-transparent dropdown-toggle" 
-                            type="button" 
-                            id="dropdownMenuButtonMobile" 
-                            data-bs-toggle="dropdown" 
-                            aria-expanded="false">
-                        <div class="profile-avatar">
-                            <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=001a12&color=fff&size=40" 
-                                 alt="Profile" 
-                                 class="rounded-circle"
-                                 width="40" 
-                                 height="40">
-                        </div>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownMenuButtonMobile">
-                        <li>
-                            <a class="dropdown-item" href="/pembeli/profile">
-                                <i class="fas fa-user me-2"></i> Profile Saya
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item active" href="/order-history">
-                                <i class="fas fa-history me-2"></i> Riwayat Transaksi
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="/pembeli/settings">
-                                <i class="fas fa-cog me-2"></i> Pengaturan
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <a class="dropdown-item text-danger" href="#">
-                                <i class="fas fa-sign-out-alt me-2"></i> Logout
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Order Button (Mobile) -->
-                <div class="ms-2">
-                    <a href="/menu" class="btn-transparent">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </div>
+           <!-- Mobile Header (Profile + Order) -->
+<div class="d-flex align-items-center d-lg-none">
+    <!-- Profile Dropdown (Mobile) -->
+    <div class="dropdown">
+        <button class="btn btn-transparent dropdown-toggle" 
+                type="button" 
+                id="dropdownMenuButtonMobile" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+            <div class="profile-avatar">
+                <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=001a12&color=fff&size=40" 
+                     alt="Profile" 
+                     class="rounded-circle"
+                     width="40" 
+                     height="40">
             </div>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownMenuButtonMobile">
+            <!-- Tambahkan Rating dan Report di atas -->
+            <li>
+                <a class="dropdown-item" href="/rating">
+                    <i class="fas fa-star text-warning me-2"></i> Rating
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/report">
+                    <i class="fas fa-flag text-danger me-2"></i> Report
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <!-- Menu yang sudah ada -->
+            <li>
+                <a class="dropdown-item" href="/pembeli/profile">
+                    <i class="fas fa-user me-2"></i> Profile Saya
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item active" href="/order-history">
+                    <i class="fas fa-history me-2"></i> Riwayat Transaksi
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/pembeli/settings">
+                    <i class="fas fa-cog me-2"></i> Pengaturan
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <a class="dropdown-item text-danger" href="#">
+                    <i class="fas fa-sign-out-alt me-2"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Order Button (Mobile) -->
+    <div class="ms-2">
+        <a href="/menu" class="btn-transparent">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+    </div>
+</div>
         </div>
     </nav>
 

@@ -11,6 +11,7 @@ body {
     padding-bottom: 30px;
 }
 
+
 /* Header */
 .rating-header {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));

@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <!-- ===== MAIN CONTENT ===== -->
+    <!--===== MAIN CONTENT =====-->
     <div class="container mt-4">
         <!-- Step 1: Pilih Makanan -->
         <div class="step-card active" id="step1">

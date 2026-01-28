@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/report.css') }}">
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
+    <!--===== HEADER =====-->
     <div class="report-header">
         <div class="container">
             <div class="d-flex align-items-center">
