@@ -38,17 +38,6 @@
                         />
                         <label for="nisn" class="input-label">NISN</label>
                     </div>
-                    <div class="input-area">
-                        <input
-                            type="text"
-                            id="nisn"
-                            name="nisn"
-                            class="input-field"
-                            placeholder=" "
-                            required
-                        />
-                        <label for="nisn" class="input-label">PIN</label>
-                    </div>
 
                     <button class="btn-login" type="button"><a href="{{route('wizard')}}">Login</a></button>
                 </form>

@@ -110,39 +110,196 @@
         </div>
     </nav>
 
-   <!-- ===== PROMO CAROUSEL ===== -->
-<section id="home" class="promo-carousel">
-    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <a href="/menu?promo=diskon30">
-                    <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"></div>
-                    <div class="carousel-caption">
+    <section id="home" class="promo-carousel">
+        
+        <div class="promo-scroll-wrapper">
+            <div class="promo-menu-scroll" id="promoMenuScroll">
+                <!-- Menu Promo 1 -->
+                <div class="promo-menu-card">
+                    <div class="promo-badge">30% OFF</div>
+                    <div class="promo-menu-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="promo-menu-content">
+                        <h4>Salad Sehat Super</h4>
+                        <div class="promo-price">
+                            <span class="old-price">Rp 35.000</span>
+                            <span class="new-price">Rp 25.000</span>
+                        </div>
+                        <p>Campuran sayuran organik segar</p>
+                        <div class="promo-card-actions">
+                            <button class="btn-info" onclick="showNutritionInfo(this)">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="btn-promo" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
                     </div>
-                </a>
+                </div>
+                
+                <!-- Menu Promo 2 -->
+                <div class="promo-menu-card">
+                    <div class="promo-badge">BUY 1 GET 1</div>
+                    <div class="promo-menu-image" style="background-image: url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="promo-menu-content">
+                        <h4>Jus Detox Mix</h4>
+                        <div class="promo-price">
+                            <span class="old-price">Rp 36.000</span>
+                            <span class="new-price">Rp 18.000</span>
+                        </div>
+                        <p>Campuran buah organik tanpa gula</p>
+                        <div class="promo-card-actions">
+                            <button class="btn-info" onclick="showNutritionInfo(this)">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="btn-promo" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Promo 3 -->
+                <div class="promo-menu-card">
+                    <div class="promo-badge">25% OFF</div>
+                    <div class="promo-menu-image" style="background-image: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="promo-menu-content">
+                        <h4>Nasi Goreng Sehat</h4>
+                        <div class="promo-price">
+                            <span class="old-price">Rp 37.000</span>
+                            <span class="new-price">Rp 28.000</span>
+                        </div>
+                        <p>Nasi merah dengan sayuran organik</p>
+                        <div class="promo-card-actions">
+                            <button class="btn-info" onclick="showNutritionInfo(this)">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="btn-promo" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Promo 4 -->
+                <div class="promo-menu-card">
+                    <div class="promo-badge">SPESIAL</div>
+                    <div class="promo-menu-image" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="promo-menu-content">
+                        <h4>Paket Makan Siang</h4>
+                        <div class="promo-price">
+                            <span class="old-price">Rp 45.000</span>
+                            <span class="new-price">Rp 35.000</span>
+                        </div>
+                        <p>Makan lengkap + minuman sehat</p>
+                        <div class="promo-card-actions">
+                            <button class="btn-info" onclick="showNutritionInfo(this)">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="btn-promo" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Promo 5 -->
+                <div class="promo-menu-card">
+                    <div class="promo-badge">20% OFF</div>
+                    <div class="promo-menu-image" style="background-image: url('https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="promo-menu-content">
+                        <h4>Sup Ayam Jamur</h4>
+                        <div class="promo-price">
+                            <span class="old-price">Rp 25.000</span>
+                            <span class="new-price">Rp 20.000</span>
+                        </div>
+                        <p>Sup hangat dengan ayam dan jamur</p>
+                        <div class="promo-card-actions">
+                            <button class="btn-info" onclick="showNutritionInfo(this)">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="btn-promo" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Promo 6 -->
+                <div class="promo-menu-card">
+                    <div class="promo-badge">NEW</div>
+                    <div class="promo-menu-image" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="promo-menu-content">
+                        <h4>Pizza Sehat</h4>
+                        <div class="promo-price">
+                            <span class="old-price">Rp 40.000</span>
+                            <span class="new-price">Rp 32.000</span>
+                        </div>
+                        <p>Pizza dengan topping sayuran segar</p>
+                        <div class="promo-card-actions">
+                            <button class="btn-info" onclick="showNutritionInfo(this)">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="btn-promo" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Promo 7 -->
+                <div class="promo-menu-card">
+                    <div class="promo-badge">15% OFF</div>
+                    <div class="promo-menu-image" style="background-image: url('https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="promo-menu-content">
+                        <h4>Smoothie Berry</h4>
+                        <div class="promo-price">
+                            <span class="old-price">Rp 23.000</span>
+                            <span class="new-price">Rp 19.500</span>
+                        </div>
+                        <p>Campuran berry dengan yogurt</p>
+                        <div class="promo-card-actions">
+                            <button class="btn-info" onclick="showNutritionInfo(this)">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="btn-promo" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Promo 8 -->
+                <div class="promo-menu-card">
+                    <div class="promo-badge">LIMITED</div>
+                    <div class="promo-menu-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="promo-menu-content">
+                        <h4>Burger Sehat</h4>
+                        <div class="promo-price">
+                            <span class="old-price">Rp 32.000</span>
+                            <span class="new-price">Rp 25.000</span>
+                        </div>
+                        <p>Burger dengan patty sayuran</p>
+                        <div class="promo-card-actions">
+                            <button class="btn-info" onclick="showNutritionInfo(this)">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="btn-promo" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <a href="/menu?category=menu-baru">
-                    <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"></div>
-                    <div class="carousel-caption">
-                    </div>
-                </a>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <a href="/register">
-                    <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"></div>
-                    <div class="carousel-caption">
-                    </div>
-                </a>
-            </div>
+            <!-- Scroll Buttons -->
+            <button class="scroll-btn scroll-left" id="scrollLeft">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="scroll-btn scroll-right" id="scrollRight">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- ===== BEST SELLER SECTION ===== -->
     <section id="best-seller" class="best-seller">
