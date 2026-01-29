@@ -14,10 +14,10 @@
     <div class="container">
         <div class="card">
             <div class="info-box">
-                <div class="info-title">Verifikasi Email</div>
+                <div class="info-title">Verifikasi Nomor</div>
                 
                 <div class="email-box">
-                    <span class="email">kimi.anonteli@example.com</span>
+                    <span class="email">081266557788</span>
                 </div>
                 
                 <p class="info-text">
@@ -58,8 +58,8 @@
                 </div>
             </form>
 
-            <a href="{{ route('datalogin') }}" class="back-link">
-                Kembali ke Login
+            <a href="{{ route('wizard') }}" class="back-link">
+                Kembali ke Sebelumnya
             </a>
         </div>
     </div>
