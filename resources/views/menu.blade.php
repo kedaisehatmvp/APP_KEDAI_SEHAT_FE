@@ -186,7 +186,13 @@
                     </a>
                 </div>
                 
-            
+                <!-- Cart (Mobile) -->
+                <div class="position-relative ms-2">
+                    <button class="btn-transparent" id="mobileCartToggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="mobileCartCount">0</span>
+                    </button>
+                </div>
 
                 <!-- History Dropdown (Mobile) -->
                 <div class="dropdown position-relative ms-2">
@@ -227,11 +233,40 @@
     <!-- ===== HERO MENU ===== -->
     <section class="menu-hero">
         <div class="container">
-            <h1>Menu Kantin Sehat</h1>
-            <p>Temukan berbagai pilihan makanan dan minuman sehat dengan bahan organik terbaik untuk mendukung gaya hidup sehat Anda</p>
-            
-            <div class="search-box">
-                <input type="text" id="searchMenu" placeholder="Cari menu favorit Anda...">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Menu Kantin Sehat</h1>
+                    <p>Temukan berbagai pilihan makanan dan minuman sehat dengan bahan organik terbaik untuk mendukung gaya hidup sehat Anda</p>
+                    
+                    <div class="search-box">
+                        <input type="text" id="searchMenu" placeholder="Cari menu favorit Anda...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="hero-stats mt-4">
+                        <div class="stat-item">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <h4>50+</h4>
+                                <p>Menu Sehat</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>4.8</h4>
+                                <p>Rating Pelanggan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center d-none d-lg-block">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Healthy Food">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -239,14 +274,55 @@
     <!-- ===== CATEGORY FILTER ===== -->
     <section class="category-filter">
         <div class="container">
+            <div class="section-title">
+                <h3>Kategori Menu</h3>
+                <p>Pilih kategori favorit Anda</p>
+            </div>
+            
             <div class="category-buttons">
-                <button class="category-btn active" data-category="all">Semua</button>
-                <button class="category-btn" data-category="makanan">Makanan</button>
-                <button class="category-btn" data-category="minuman">Minuman</button>
-                <button class="category-btn" data-category="cemilan">Cemilan</button>
-                <button class="category-btn" data-category="paket">Paket</button>
-                <button class="category-btn" data-category="vegetarian">Vegetarian</button>
-                <button class="category-btn" data-category="low-calorie">Low Calorie</button>
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i>
+                    <span>Semua</span>
+                </button>
+                <button class="category-btn" data-category="makanan">
+                    <i class="fas fa-utensils"></i>
+                    <span>Makanan</span>
+                </button>
+                <button class="category-btn" data-category="minuman">
+                    <i class="fas fa-glass-whiskey"></i>
+                    <span>Minuman</span>
+                </button>
+                <button class="category-btn" data-category="cemilan">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>Cemilan</span>
+                </button>
+                <button class="category-btn" data-category="paket">
+                    <i class="fas fa-box"></i>
+                    <span>Paket</span>
+                </button>
+                <button class="category-btn" data-category="vegetarian">
+                    <i class="fas fa-leaf"></i>
+                    <span>Vegetarian</span>
+                </button>
+                <button class="category-btn" data-category="low-calorie">
+                    <i class="fas fa-weight"></i>
+                    <span>Low Calorie</span>
+                </button>
+            </div>
+            
+            <div class="category-info d-none d-md-block">
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Semua bahan organik</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Tanpa pengawet</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Harga terjangkau</span>
+                </div>
             </div>
         </div>
     </section>
@@ -254,64 +330,86 @@
     <!-- ===== MENU GRID ===== -->
     <section class="menu-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Menu Terpopuler</h2>
-                <p>Pilihan menu sehat favorit pelanggan kami</p>
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Menu Terpopuler</h2>
+                    <p>Pilihan menu sehat favorit pelanggan kami</p>
+                </div>
+                
+                <div class="sort-options">
+                    <select id="sortMenu" class="form-select">
+                        <option value="default">Urutkan</option>
+                        <option value="popular">Paling Populer</option>
+                        <option value="rating">Rating Tertinggi</option>
+                        <option value="price-low">Harga Terendah</option>
+                        <option value="price-high">Harga Tertinggi</option>
+                    </select>
+                </div>
             </div>
             
             <div class="menu-grid" id="menuGrid">
                 <!-- Menu items will be loaded here by JavaScript -->
             </div>
             
-            <div class="pagination">
-                <a href="#" class="page-link active">1</a>
-                <a href="#" class="page-link">2</a>
-                <a href="#" class="page-link">3</a>
-                <a href="#" class="page-link">4</a>
-                <a href="#" class="page-link">5</a>
+            <div class="load-more">
+                <button class="btn-load-more" id="loadMore">
+                    <i class="fas fa-plus-circle me-2"></i> Tampilkan Lebih Banyak
+                </button>
             </div>
         </div>
     </section>
 
     <!-- ===== PROMO SECTION ===== -->
-    <section id="promo" class="menu-section" style="background: #f8f9fa;">
+    <section id="promo" class="menu-section promo-section">
         <div class="container">
             <div class="section-title">
                 <h2>Promo Spesial</h2>
                 <p>Dapatkan penawaran terbaik untuk hidup sehat</p>
             </div>
             
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="promo-card text-center p-4 bg-white rounded shadow-sm">
-                        <div class="promo-icon mb-3">
-                            <i class="fas fa-gift fa-3x" style="color: #001a12;"></i>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <div class="promo-badge">-20%</div>
+                    <div class="promo-content">
+                        <div class="promo-icon">
+                            <i class="fas fa-gift"></i>
                         </div>
-                        <h4 style="color: #001a12;">Diskon 20%</h4>
+                        <h4>Diskon 20%</h4>
                         <p>Untuk pembelian pertama Anda</p>
-                        <small class="text-muted">Berlaku hingga 31 Desember 2024</small>
+                        <div class="promo-footer">
+                            <small><i class="far fa-calendar-alt"></i> Berlaku hingga 31 Des 2024</small>
+                            <button class="btn-promo">Klaim Sekarang</button>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="col-md-4 mb-4">
-                    <div class="promo-card text-center p-4 bg-white rounded shadow-sm">
-                        <div class="promo-icon mb-3">
-                            <i class="fas fa-users fa-3x" style="color: #001a12;"></i>
+                <div class="promo-card">
+                    <div class="promo-badge">BOGO</div>
+                    <div class="promo-content">
+                        <div class="promo-icon">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <h4 style="color: #001a12;">Buy 1 Get 1</h4>
+                        <h4>Buy 1 Get 1</h4>
                         <p>Untuk menu minuman setiap hari Jumat</p>
-                        <small class="text-muted">Minimal pembelian Rp 50.000</small>
+                        <div class="promo-footer">
+                            <small><i class="fas fa-info-circle"></i> Min. pembelian Rp 50.000</small>
+                            <button class="btn-promo">Lihat Syarat</button>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="col-md-4 mb-4">
-                    <div class="promo-card text-center p-4 bg-white rounded shadow-sm">
-                        <div class="promo-icon mb-3">
-                            <i class="fas fa-star fa-3x" style="color: #001a12;"></i>
+                <div class="promo-card">
+                    <div class="promo-badge">POIN</div>
+                    <div class="promo-content">
+                        <div class="promo-icon">
+                            <i class="fas fa-star"></i>
                         </div>
-                        <h4 style="color: #001a12;">Member Loyalty</h4>
+                        <h4>Member Loyalty</h4>
                         <p>Dapatkan poin untuk setiap pembelian</p>
-                        <small class="text-muted">Tukar poin dengan menu gratis</small>
+                        <div class="promo-footer">
+                            <small><i class="fas fa-exchange-alt"></i> Tukar poin dengan menu gratis</small>
+                            <button class="btn-promo">Cek Poin</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -336,7 +434,7 @@
             <a href="#" class="bottom-bar-item" id="bottomBarCartToggle">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Keranjang</span>
-                <span class="cart-badge" style="right: 20px;" id="bottomBarCartCount">0</span>
+                <span class="cart-badge" id="bottomBarCartCount">0</span>
             </a>
         </div>
     </div>
@@ -358,12 +456,25 @@
         </div>
         
         <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total</span>
-                <span class="cart-total-amount" id="cartTotal">Rp 0</span>
+            <div class="cart-summary">
+                <div class="cart-summary-item">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">Rp 0</span>
+                </div>
+                <div class="cart-summary-item">
+                    <span>Diskon</span>
+                    <span class="text-success">- Rp 0</span>
+                </div>
+                <div class="cart-summary-item total">
+                    <span>Total</span>
+                    <span class="cart-total-amount" id="cartTotal">Rp 0</span>
+                </div>
             </div>
             <button class="btn-checkout" onclick="goToCheckout()">
                 <i class="fas fa-credit-card me-2"></i> Checkout
+            </button>
+            <button class="btn-continue" onclick="closeCart()">
+                <i class="fas fa-shopping-bag me-2"></i> Lanjut Belanja
             </button>
         </div>
     </div>
@@ -371,7 +482,67 @@
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
-   
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <a href="/" class="footer-logo">
+                        <i class="fas fa-seedling me-2"></i>Kantin<span>Sehat</span>
+                    </a>
+                    <div class="footer-about">
+                        <p>Menyediakan makanan sehat dan bergizi untuk mendukung gaya hidup sehat masyarakat sekolah.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Menu</h5>
+                        <ul>
+                            <li><a href="/menu">Semua Menu</a></li>
+                            <li><a href="/menu?category=makanan">Makanan</a></li>
+                            <li><a href="/menu?category=minuman">Minuman</a></li>
+                            <li><a href="/menu?category=cemilan">Cemilan</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Layanan</h5>
+                        <ul>
+                            <li><a href="/order-history">Riwayat Pesanan</a></li>
+                            <li><a href="#promo">Promo & Diskon</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="/contact">Kontak Kami</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Kontak</h5>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Jl. Sehat No. 123, Jakarta</li>
+                            <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                            <li><i class="fas fa-envelope"></i> info@kantinsehat.com</li>
+                            <li><i class="fas fa-clock"></i> Senin-Jumat: 07.00-15.00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Kantin Sehat. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- ===== SCRIPTS ===== -->
     <!-- Bootstrap JS -->

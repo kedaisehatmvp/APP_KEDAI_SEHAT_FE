@@ -1,145 +1,242 @@
-// Menu data dengan gambar yang diperbaiki
+// Menu data dengan gambar yang diperbaiki dan data tambahan
 const menuItems = [
     {
         id: 1,
         name: "Salad Sehat Super",
         category: ["makanan", "vegetarian", "low-calorie"],
-        description: "Campuran sayuran organik segar dengan dressing khusus rendah kalori.",
+        description: "Campuran sayuran organik segar (selada, tomat cherry, timun, wortel) dengan dressing khusus rendah kalori dan biji chia.",
         price: 25000,
         oldPrice: 30000,
         image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.8,
         calories: 180,
         featured: true,
-        badge: "HOT"
+        badge: "HOT",
+        sold: 342,
+        prepTime: 5,
+        ingredients: ["Selada organik", "Tomat cherry", "Mentimun", "Wortel", "Biji chia", "Dressing lemon"],
+        reviews: [
+            { name: "Budi Santoso", rating: 5, comment: "Saladnya segar banget! Dressingnya pas tidak terlalu asam." },
+            { name: "Sari Dewi", rating: 4, comment: "Enak dan sehat, sayurnya masih fresh. Cuman dikit banget porsinya." },
+            { name: "Ahmad Rizki", rating: 5, comment: "Favorite saya buat makan siang, bikin kenyang tapi tidak bikin mengantuk." }
+        ]
     },
     {
         id: 2,
         name: "Jus Detox Mix",
         category: ["minuman", "vegetarian"],
-        description: "Campuran buah-buahan organik tanpa gula tambahan, kaya vitamin.",
+        description: "Campuran buah-buahan organik (apel hijau, seledri, lemon, jahe) tanpa gula tambahan, kaya vitamin dan antioksidan.",
         price: 18000,
         image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 5.0,
         calories: 120,
         featured: false,
-        badge: "NEW"
+        badge: "NEW",
+        sold: 215,
+        prepTime: 3,
+        ingredients: ["Apel hijau organik", "Seledri", "Lemon", "Jahe", "Air mineral"],
+        reviews: [
+            { name: "Linda Wijaya", rating: 5, comment: "Rasanya segar banget! Perfect untuk detox setelah makan berat." },
+            { name: "Rudi Hartono", rating: 5, comment: "Tidak terlalu manis, justru enak gitu. Bikin badan terasa ringan." },
+            { name: "Maya Sari", rating: 5, comment: "Jahenya pas, tidak terlalu kuat. Saya minum setiap pagi sekarang." }
+        ]
     },
     {
         id: 3,
         name: "Nasi Goreng Sehat",
         category: ["makanan"],
-        description: "Nasi merah dengan sayuran organik dan protein rendah lemak.",
+        description: "Nasi merah dengan sayuran organik (wortel, buncis, jagung) dan dada ayam panggang tanpa kulit, dimasak dengan minyak zaitun.",
         price: 28000,
         image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.5,
         calories: 320,
-        featured: true
+        featured: true,
+        sold: 478,
+        prepTime: 8,
+        ingredients: ["Nasi merah", "Dada ayam tanpa kulit", "Wortel", "Buncis", "Jagung manis", "Telur", "Minyak zaitun"],
+        reviews: [
+            { name: "Dian Pratama", rating: 4, comment: "Enak dan tidak terlalu berminyak. Nasinya masih pera seperti nasi merah seharusnya." },
+            { name: "Fajar Nugroho", rating: 5, comment: "Favorite menu! Dada ayamnya empuk dan banyak potongannya." },
+            { name: "Putri Ayu", rating: 4, comment: "Rasanya ringan, cocok buat yang lagi diet tapi pengen makan nasi goreng." }
+        ]
     },
     {
         id: 4,
         name: "Smoothie Bowl Berry",
         category: ["makanan", "vegetarian", "low-calorie"],
-        description: "Smoothie buah berry dengan topping granola dan buah segar.",
+        description: "Smoothie buah berry (strawberry, blueberry, raspberry) dengan topping granola homemade, chia seed, dan potongan buah segar.",
         price: 22000,
         image: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.7,
         calories: 210,
-        featured: false
+        featured: false,
+        badge: "POPULAR",
+        sold: 189,
+        prepTime: 5,
+        ingredients: ["Strawberry", "Blueberry", "Raspberry", "Yogurt rendah lemak", "Granola homemade", "Chia seed", "Madu"],
+        reviews: [
+            { name: "Rina Melati", rating: 5, comment: "Warnanya cantik banget! Rasanya juga enak, manis alami dari buah." },
+            { name: "Andi Saputra", rating: 4, comment: "Cocok buat sarapan, kenyang sampai siang. Granolanya renyah enak." },
+            { name: "Siska Wati", rating: 5, comment: "Anak saya suka banget! Sekarang jadi menu rutin buat bekal sekolah." }
+        ]
     },
     {
         id: 5,
         name: "Sandwich Ayam Sehat",
         category: ["makanan"],
-        description: "Roti gandum dengan ayam panggang dan sayuran segar.",
+        description: "Roti gandum dengan ayam panggang, selada, tomat, mentimun, dan saus yogurt rendah lemak. Dikemas dengan rapi untuk dibawa.",
         price: 20000,
         oldPrice: 25000,
         image: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.2,
         calories: 280,
-        featured: false
+        featured: false,
+        sold: 321,
+        prepTime: 4,
+        ingredients: ["Roti gandum", "Dada ayam panggang", "Selada", "Tomat", "Mentimun", "Saus yogurt", "Mayo rendah lemak"],
+        reviews: [
+            { name: "Hendra Kurniawan", rating: 4, comment: "Praktis buat dibawa, rotinya masih lembut." },
+            { name: "Wulan Sari", rating: 5, comment: "Ayamnya banyak dan empuk. Saus yogurttnya bikin rasanya segar." },
+            { name: "Bayu Adi", rating: 4, comment: "Cocok buat makan siang cepat. Tidak bikin kantong bolong juga." }
+        ]
     },
     {
         id: 6,
         name: "Teh Hijau Organik",
         category: ["minuman", "vegetarian", "low-calorie"],
-        description: "Teh hijau premium tanpa gula, kaya antioksidan.",
+        description: "Teh hijau premium dari daun teh pilihan, diseduh dengan suhu tepat tanpa gula tambahan, kaya antioksidan dan baik untuk metabolisme.",
         price: 12000,
         image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.9,
         calories: 5,
         featured: false,
-        badge: "NEW"
+        badge: "NEW",
+        sold: 567,
+        prepTime: 2,
+        ingredients: ["Daun teh hijau organik", "Air panas 80°C"],
+        reviews: [
+            { name: "Agus Setiawan", rating: 5, comment: "Tehnya harum, tidak pahit. Saya minum 2x sehari." },
+            { name: "Nina Hartanti", rating: 5, comment: "Sempurna! Tidak pakai gula jadi benar-benar sehat." },
+            { name: "Rizky Fadilah", rating: 4, comment: "Enak dinikmati hangat. Bikin rileks setelah ujian." }
+        ]
     },
     {
         id: 7,
         name: "Paket Diet Sehat",
         category: ["paket", "vegetarian", "low-calorie"],
-        description: "Paket lengkap untuk diet sehat selama 1 hari.",
+        description: "Paket lengkap untuk diet sehat selama 1 hari terdiri dari sarapan oatmeal, salad makan siang, cemilan edamame, dan makan makan sup sayur.",
         price: 75000,
         oldPrice: 90000,
         image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.9,
         calories: 450,
         featured: true,
-        badge: "HOT"
+        badge: "HOT",
+        sold: 89,
+        prepTime: 10,
+        ingredients: ["Oatmeal dengan buah", "Salad sayuran", "Edamame rebus", "Sup sayur", "Teh hijau"],
+        reviews: [
+            { name: "Dewi Lestari", rating: 5, comment: "Paketnya komplit banget! Berhasil turun 2kg dalam seminggu." },
+            { name: "Ari Wibowo", rating: 5, comment: "Portionnya pas, tidak kekurangan atau kelebihan. Recommended!" },
+            { name: "Mira Handayani", rating: 4, comment: "Rasanya enak semua, cuman agak mahal tapi worth it lah." }
+        ]
     },
     {
         id: 8,
         name: "Yogurt Parfait",
         category: ["cemilan", "vegetarian", "low-calorie"],
-        description: "Yogurt rendah lemak dengan buah segar dan granola.",
+        description: "Yogurt rendah lemak dengan lapisan granola, buah berry segar, dan madu asli. Disajikan dalam gelas bening yang menarik.",
         price: 18000,
         image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.6,
         calories: 160,
-        featured: false
+        featured: false,
+        sold: 234,
+        prepTime: 3,
+        ingredients: ["Yogurt rendah lemak", "Granola", "Strawberry", "Blueberry", "Madu asli"],
+        reviews: [
+            { name: "Cindy Anggraeni", rating: 5, comment: "Tampilannya cantik banget! Rasanya juga enak, yogurttnya tidak terlalu asam." },
+            { name: "Eko Prasetyo", rating: 4, comment: "Enak buat cemilan sore. Manisnya pas dari madu." },
+            { name: "Lina Marlina", rating: 5, comment: "Anak-anak suka banget! Sekarang jadi cemilan favorit keluarga." }
+        ]
     },
     {
         id: 9,
         name: "Air Lemon Detox",
         category: ["minuman", "vegetarian", "low-calorie"],
-        description: "Air lemon hangat untuk detox tubuh di pagi hari.",
+        description: "Air lemon hangat dengan irisan lemon segar dan sedikit madu. Perfect untuk memulai hari atau detox tubuh di pagi hari.",
         price: 8000,
         image: "https://images.unsplash.com/photo-1546171753-97d7676e4602?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.4,
         calories: 10,
-        featured: false
+        featured: false,
+        sold: 412,
+        prepTime: 2,
+        ingredients: ["Lemon segar", "Air hangat", "Madu (opsional)"],
+        reviews: [
+            { name: "Rina Permatasari", rating: 5, comment: "Rutin minum setiap pagi, badan terasa lebih segar." },
+            { name: "Arief Rahman", rating: 4, comment: "Sederhana tapi efeknya bagus untuk pencernaan." },
+            { name: "Susi Susanti", rating: 5, comment: "Harga murah, manfaatnya banyak. Wajib order setiap hari." }
+        ]
     },
     {
         id: 10,
         name: "Oatmeal Pisang",
         category: ["makanan", "vegetarian"],
-        description: "Oatmeal dengan potongan pisang dan madu organik.",
+        description: "Oatmeal dimasak dengan susu rendah lemak, ditambah potongan pisang, kayu manis, dan madu organik. Sarapan sehat yang mengenyangkan.",
         price: 15000,
         image: "https://images.unsplash.com/photo-1610399214658-f8c4d66c8d0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.3,
         calories: 190,
-        featured: false
+        featured: false,
+        sold: 278,
+        prepTime: 5,
+        ingredients: ["Oatmeal", "Susu rendah lemak", "Pisang", "Kayu manis", "Madu organik"],
+        reviews: [
+            { name: "Bambang Suryadi", rating: 4, comment: "Oatmealnya lembut, tidak berair. Pisangnya manis alami." },
+            { name: "Tuti Alawiyah", rating: 5, comment: "Sarapan favorit saya! Tidak bikin ngantuk di kelas." },
+            { name: "Ramon Sinaga", rating: 4, comment: "Enak dan sehat. Kadang saya tambahin kismis sendiri." }
+        ]
     },
     {
         id: 11,
         name: "Cemilan Edamame",
         category: ["cemilan", "vegetarian", "low-calorie"],
-        description: "Edamame rebus dengan sedikit garam laut.",
+        description: "Edamame rebus dengan sedikit garam laut. Kaya protein nabati dan serat, cocok untuk cemilan sehat kapan saja.",
         price: 12000,
         image: "https://images.unsplash.com/photo-1578102487201-3c27b5e7f74c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.7,
         calories: 140,
-        featured: false
+        featured: false,
+        sold: 345,
+        prepTime: 4,
+        ingredients: ["Edamame segar", "Garam laut", "Air untuk merebus"],
+        reviews: [
+            { name: "Feri Irawan", rating: 5, comment: "Sederhana tapi enak! Proteinnya tinggi cocok buat yang gym." },
+            { name: "Dian Puspita", rating: 5, comment: "Cemilan paling sehat menurut saya. Gurih alami dari edamamenya." },
+            { name: "Herman Susanto", rating: 4, comment: "Praktis buat ngemil sambil ngerjain tugas. Tidak bikin gendut." }
+        ]
     },
     {
         id: 12,
         name: "Paket Sehat 7 Hari",
         category: ["paket", "vegetarian"],
-        description: "Paket menu sehat lengkap untuk 7 hari.",
+        description: "Paket menu sehat lengkap untuk 7 hari dengan variasi menu berbeda setiap hari. Include sarapan, makan siang, cemilan, dan makan malam.",
         price: 350000,
         oldPrice: 420000,
         image: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         rating: 4.8,
         calories: 450,
         featured: true,
-        badge: "HOT"
+        badge: "HOT",
+        sold: 45,
+        prepTime: 15,
+        ingredients: ["Berbagai sayuran organik", "Buah-buahan segar", "Protein nabati", "Biji-bijian", "Rempah alami"],
+        reviews: [
+            { name: "Gita Natasha", rating: 5, comment: "Investasi kesehatan yang worth it! Badan terasa lebih fit dalam 7 hari." },
+            { name: "Rendra Maulana", rating: 5, comment: "Menu tidak monoton, setiap hari ada surprise baru. Keren!" },
+            { name: "Sari Indah", rating: 4, comment: "Sedikit mahal tapi kualitasnya premium. Sayurnya selalu fresh." }
+        ]
     }
 ];
 
@@ -147,11 +244,15 @@ const menuItems = [
 let cart = JSON.parse(localStorage.getItem('kantinSehatCart')) || [];
 let userData = null;
 let frequentMenus = JSON.parse(localStorage.getItem('kantinSehatFrequentMenus')) || [];
+let currentPage = 1;
+const itemsPerPage = 6;
+let currentSort = 'default';
 
 // DOM elements
 const menuGrid = document.getElementById('menuGrid');
 const categoryButtons = document.querySelectorAll('.category-btn');
 const searchInput = document.getElementById('searchMenu');
+const searchBtn = document.querySelector('.search-btn');
 const cartSidebar = document.getElementById('cartSidebar');
 const overlay = document.getElementById('overlay');
 const cartToggle = document.getElementById('cartToggle');
@@ -163,11 +264,14 @@ const cartCount = document.getElementById('cartCount');
 const mobileCartCount = document.getElementById('mobileCartCount');
 const bottomBarCartCount = document.getElementById('bottomBarCartCount');
 const cartTotal = document.getElementById('cartTotal');
+const cartSubtotal = document.getElementById('cartSubtotal');
 const profileDropdown = document.getElementById('profileDropdown');
 const mobileProfileDropdown = document.getElementById('mobileProfileDropdown');
 const loginButton = document.getElementById('loginButton');
 const mobileLoginButton = document.getElementById('mobileLoginButton');
 const bottomBarItems = document.querySelectorAll('.bottom-bar-item');
+const loadMoreBtn = document.getElementById('loadMore');
+const sortSelect = document.getElementById('sortMenu');
 
 // Frequent menu elements
 const frequentBadge = document.getElementById('frequentBadge');
@@ -178,7 +282,7 @@ const mobileFrequentMenuBody = document.getElementById('mobileFrequentMenuBody')
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
     checkLoginStatus();
-    renderMenu('all');
+    renderMenu('all', currentSort);
     updateCart();
     updateFrequentBadge();
     
@@ -189,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const yearElement = document.querySelector('.copyright p');
     if (yearElement) {
         const currentYear = new Date().getFullYear();
-        yearElement.innerHTML = yearElement.innerHTML.replace('2024', currentYear);
+        yearElement.innerHTML = `&copy; ${currentYear} Kantin Sehat. Semua hak dilindungi.`;
     }
     
     // Handle bottom bar active state
@@ -197,6 +301,37 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize Bootstrap dropdown events
     initDropdownEvents();
+    
+    // Setup search button
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+            performSearch();
+        });
+    }
+    
+    // Setup search input enter key
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+    
+    // Setup sort select
+    if (sortSelect) {
+        sortSelect.addEventListener('change', function() {
+            currentSort = this.value;
+            renderMenu('all', currentSort);
+        });
+    }
+    
+    // Setup load more button
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            loadMoreItems();
+        });
+    }
 });
 
 // Initialize dropdown events
@@ -210,6 +345,21 @@ function initDropdownEvents() {
             }
         });
     });
+}
+
+// Perform search
+function performSearch() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    if (searchTerm) {
+        const filteredItems = menuItems.filter(item => 
+            item.name.toLowerCase().includes(searchTerm) ||
+            item.description.toLowerCase().includes(searchTerm) ||
+            item.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchTerm))
+        );
+        
+        renderFilteredMenu(filteredItems);
+        showNotification('info', `Ditemukan ${filteredItems.length} hasil untuk "${searchTerm}"`);
+    }
 }
 
 // Check login status
@@ -309,21 +459,110 @@ function handleBottomBarActiveState() {
 }
 
 // Render menu items
-function renderMenu(category) {
+function renderMenu(category, sortBy = 'default') {
     menuGrid.innerHTML = '';
+    currentPage = 1;
     
-    const filteredItems = category === 'all' 
-        ? menuItems 
+    let filteredItems = category === 'all' 
+        ? [...menuItems] 
         : menuItems.filter(item => item.category.includes(category));
     
-    filteredItems.forEach(item => {
+    // Sort items
+    filteredItems = sortMenuItems(filteredItems, sortBy);
+    
+    // Get items for current page
+    const itemsToShow = filteredItems.slice(0, currentPage * itemsPerPage);
+    
+    renderMenuItems(itemsToShow);
+    
+    // Show/hide load more button
+    if (loadMoreBtn) {
+        if (filteredItems.length > itemsToShow.length) {
+            loadMoreBtn.style.display = 'block';
+        } else {
+            loadMoreBtn.style.display = 'none';
+        }
+    }
+}
+
+// Load more items
+function loadMoreItems() {
+    currentPage++;
+    
+    const activeCategory = document.querySelector('.category-btn.active').getAttribute('data-category');
+    let filteredItems = activeCategory === 'all' 
+        ? [...menuItems] 
+        : menuItems.filter(item => item.category.includes(activeCategory));
+    
+    // Sort items
+    filteredItems = sortMenuItems(filteredItems, currentSort);
+    
+    // Get items for current page
+    const itemsToShow = filteredItems.slice(0, currentPage * itemsPerPage);
+    
+    renderMenuItems(itemsToShow);
+    
+    // Show/hide load more button
+    if (filteredItems.length > itemsToShow.length) {
+        loadMoreBtn.style.display = 'block';
+    } else {
+        loadMoreBtn.style.display = 'none';
+    }
+    
+    // Smooth scroll to newly loaded items
+    const lastItem = document.querySelector('.menu-item:last-child');
+    if (lastItem) {
+        lastItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+// Sort menu items
+function sortMenuItems(items, sortBy) {
+    switch(sortBy) {
+        case 'popular':
+            return [...items].sort((a, b) => (b.sold || 0) - (a.sold || 0));
+        case 'rating':
+            return [...items].sort((a, b) => b.rating - a.rating);
+        case 'price-low':
+            return [...items].sort((a, b) => a.price - b.price);
+        case 'price-high':
+            return [...items].sort((a, b) => b.price - a.price);
+        default:
+            return items;
+    }
+}
+
+// Render filtered menu (for search)
+function renderFilteredMenu(filteredItems) {
+    menuGrid.innerHTML = '';
+    
+    if (filteredItems.length === 0) {
+        menuGrid.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <i class="fas fa-search fa-3x mb-3" style="color: #ddd;"></i>
+                <h4>Menu tidak ditemukan</h4>
+                <p class="text-muted">Coba kata kunci lain atau lihat semua menu</p>
+            </div>
+        `;
+        if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+        return;
+    }
+    
+    renderMenuItems(filteredItems);
+    
+    if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+}
+
+// Render menu items to grid
+function renderMenuItems(items) {
+    items.forEach(item => {
         const menuItem = document.createElement('div');
         menuItem.className = `menu-item ${item.featured ? 'featured' : ''}`;
         
         let badgeHtml = '';
         if (item.badge) {
-            const badgeClass = item.badge === 'HOT' ? 'hot' : 'new';
-            badgeHtml = `<span class="menu-badge ${badgeClass}">${item.badge}</span>`;
+            const badgeClass = item.badge === 'HOT' ? 'hot' : item.badge === 'NEW' ? 'new' : 'popular';
+            badgeHtml = `<span class="menu-badge ${badgeClass}"><i class="fas fa-${badgeClass === 'hot' ? 'fire' : badgeClass === 'new' ? 'star' : 'crown'}"></i> ${item.badge}</span>`;
         }
         
         let oldPriceHtml = '';
@@ -335,32 +574,49 @@ function renderMenu(category) {
         
         menuItem.innerHTML = `
             ${badgeHtml}
-            <img src="${item.image}" alt="${item.name}" class="menu-img">
+            <div class="menu-img-container">
+                <img src="${item.image}" alt="${item.name}" class="menu-img">
+            </div>
             <div class="menu-content">
-                <span class="menu-category">${getCategoryLabel(item.category[0])}</span>
+                <span class="menu-category"><i class="fas fa-${getCategoryIcon(item.category[0])}"></i> ${getCategoryLabel(item.category[0])}</span>
                 <h3 class="menu-title">${item.name}</h3>
-                <div class="menu-rating">
-                    ${ratingStars}
-                    <span>${item.rating}</span>
-                </div>
                 <p class="menu-description">${item.description}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <span class="menu-price">Rp ${item.price.toLocaleString('id-ID')}</span>
-                        ${oldPriceHtml}
+                
+                <div class="menu-footer">
+                    <div class="menu-price-container">
+                        <div>
+                            <span class="menu-price">Rp ${item.price.toLocaleString('id-ID')}</span>
+                            ${oldPriceHtml}
+                        </div>
+                        <div class="menu-rating">
+                            ${ratingStars}
+                            <span>${item.rating}</span>
+                        </div>
                     </div>
-                    <div class="menu-calories">
-                        <i class="fas fa-fire"></i>
-                        <span>${item.calories} kalori</span>
+                    
+                    <div class="menu-info">
+                        <div class="menu-calories">
+                            <i class="fas fa-fire"></i>
+                            <span>${item.calories} kal</span>
+                        </div>
+                        <div class="menu-sold">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>${item.sold || 0} terjual</span>
+                        </div>
+                        <div class="menu-time">
+                            <i class="fas fa-clock"></i>
+                            <span>${item.prepTime || 5} min</span>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-actions">
-                    <button class="btn-add-to-cart" onclick="addToCart(${item.id})">
-                        <i class="fas fa-cart-plus"></i> Tambah
-                    </button>
-                    <button class="btn-detail" onclick="showDetail(${item.id})">
-                        <i class="fas fa-info-circle"></i> Detail
-                    </button>
+                    
+                    <div class="menu-actions">
+                        <button class="btn-add-to-cart" onclick="addToCart(${item.id})">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                        <button class="btn-detail" onclick="showDetail(${item.id})" title="Detail">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
@@ -387,6 +643,19 @@ function getStarRating(rating) {
     return stars;
 }
 
+// Get category icon
+function getCategoryIcon(category) {
+    const icons = {
+        'makanan': 'utensils',
+        'minuman': 'glass-whiskey',
+        'cemilan': 'cookie-bite',
+        'paket': 'box',
+        'vegetarian': 'leaf',
+        'low-calorie': 'weight'
+    };
+    return icons[category] || 'tag';
+}
+
 // Get category label
 function getCategoryLabel(category) {
     const labels = {
@@ -406,69 +675,7 @@ categoryButtons.forEach(button => {
         categoryButtons.forEach(btn => btn.classList.remove('active'));
         this.classList.add('active');
         const category = this.getAttribute('data-category');
-        renderMenu(category);
-    });
-});
-
-// Search functionality
-searchInput.addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase();
-    const filteredItems = menuItems.filter(item => 
-        item.name.toLowerCase().includes(searchTerm) ||
-        item.description.toLowerCase().includes(searchTerm)
-    );
-    
-    menuGrid.innerHTML = '';
-    filteredItems.forEach(item => {
-        const menuItem = document.createElement('div');
-        menuItem.className = `menu-item ${item.featured ? 'featured' : ''}`;
-        
-        let badgeHtml = '';
-        if (item.badge) {
-            const badgeClass = item.badge === 'HOT' ? 'hot' : 'new';
-            badgeHtml = `<span class="menu-badge ${badgeClass}">${item.badge}</span>`;
-        }
-        
-        let oldPriceHtml = '';
-        if (item.oldPrice) {
-            oldPriceHtml = `<span class="menu-old-price">Rp ${item.oldPrice.toLocaleString('id-ID')}</span>`;
-        }
-        
-        const ratingStars = getStarRating(item.rating);
-        
-        menuItem.innerHTML = `
-            ${badgeHtml}
-            <img src="${item.image}" alt="${item.name}" class="menu-img">
-            <div class="menu-content">
-                <span class="menu-category">${getCategoryLabel(item.category[0])}</span>
-                <h3 class="menu-title">${item.name}</h3>
-                <div class="menu-rating">
-                    ${ratingStars}
-                    <span>${item.rating}</span>
-                </div>
-                <p class="menu-description">${item.description}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <span class="menu-price">Rp ${item.price.toLocaleString('id-ID')}</span>
-                        ${oldPriceHtml}
-                    </div>
-                    <div class="menu-calories">
-                        <i class="fas fa-fire"></i>
-                        <span>${item.calories} kalori</span>
-                    </div>
-                </div>
-                <div class="menu-actions">
-                    <button class="btn-add-to-cart" onclick="addToCart(${item.id})">
-                        <i class="fas fa-cart-plus"></i> Tambah
-                    </button>
-                    <button class="btn-detail" onclick="showDetail(${item.id})">
-                        <i class="fas fa-info-circle"></i> Detail
-                    </button>
-                </div>
-            </div>
-        `;
-        
-        menuGrid.appendChild(menuItem);
+        renderMenu(category, currentSort);
     });
 });
 
@@ -482,7 +689,9 @@ window.addToCart = function(itemId) {
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Login',
-            cancelButtonText: 'Nanti'
+            cancelButtonText: 'Nanti',
+            confirmButtonColor: '#001a12',
+            cancelButtonColor: '#6c757d'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = '/login';
@@ -511,6 +720,11 @@ window.addToCart = function(itemId) {
     
     updateCart();
     showNotification('success', `${item.name} ditambahkan ke keranjang`);
+    
+    // Show cart sidebar on mobile
+    if (window.innerWidth < 768) {
+        toggleCart();
+    }
 }
 
 // Add to frequent menu
@@ -668,7 +882,7 @@ window.viewAllFrequentMenus = function() {
     }
     
     let allMenusHtml = '<div class="text-start">';
-    allMenusHtml += '<h5 class="mb-3">Semua Menu Sering Dibeli</h5>';
+    allMenusHtml += '<h5 class="mb-3" style="color: var(--primary);">Semua Menu Sering Dibeli</h5>';
     
     // Sort by count
     const sortedMenus = [...frequentMenus].sort((a, b) => b.count - a.count);
@@ -678,13 +892,13 @@ window.viewAllFrequentMenus = function() {
         if (!menuItem) return;
         
         allMenusHtml += `
-            <div class="d-flex align-items-center mb-3 p-2 border rounded">
+            <div class="d-flex align-items-center mb-3 p-2 border rounded" style="border-color: #eee !important;">
                 <img src="${menuItem.image}" alt="${menuItem.name}" 
                      style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px; margin-right: 10px;">
                 <div class="flex-grow-1">
-                    <h6 class="mb-1">${menuItem.name}</h6>
+                    <h6 class="mb-1" style="font-size: 0.9rem;">${menuItem.name}</h6>
                     <div class="d-flex justify-content-between">
-                        <small class="text-primary">Rp ${menuItem.price.toLocaleString('id-ID')}</small>
+                        <small class="text-primary fw-bold">Rp ${menuItem.price.toLocaleString('id-ID')}</small>
                         <small class="text-muted">${item.count}x dibeli</small>
                     </div>
                     <small class="text-muted">Terakhir: ${formatDate(item.lastPurchased)}</small>
@@ -703,7 +917,10 @@ window.viewAllFrequentMenus = function() {
         html: allMenusHtml,
         width: 600,
         showCloseButton: true,
-        showConfirmButton: false
+        showConfirmButton: false,
+        customClass: {
+            popup: 'rounded-3'
+        }
     });
 }
 
@@ -748,13 +965,14 @@ function updateCart() {
             </div>
         `;
         cartTotal.textContent = 'Rp 0';
+        cartSubtotal.textContent = 'Rp 0';
     } else {
         let cartHtml = '';
-        let total = 0;
+        let subtotal = 0;
         
         cart.forEach(item => {
             const itemTotal = item.price * item.quantity;
-            total += itemTotal;
+            subtotal += itemTotal;
             
             cartHtml += `
                 <div class="cart-item">
@@ -778,35 +996,144 @@ function updateCart() {
         });
         
         cartBody.innerHTML = cartHtml;
-        cartTotal.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+        cartSubtotal.textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+        cartTotal.textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
     }
 }
 
-// Show item detail
+// Show item detail with enhanced modal
 window.showDetail = function(itemId) {
     const item = menuItems.find(i => i.id === itemId);
     
-    Swal.fire({
-        title: item.name,
-        html: `
-            <div class="text-center mb-3">
-                <img src="${item.image}" alt="${item.name}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 10px;">
+    // Create HTML for ingredients
+    let ingredientsHtml = '';
+    if (item.ingredients && item.ingredients.length > 0) {
+        ingredientsHtml = `
+            <div class="mb-4">
+                <h6 style="color: var(--primary); font-weight: 700;">Bahan-bahan:</h6>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                    ${item.ingredients.map(ing => 
+                        `<span class="badge bg-light text-dark border" style="font-weight: 500;">${ing}</span>`
+                    ).join('')}
+                </div>
             </div>
-            <p><strong>Deskripsi:</strong> ${item.description}</p>
-            <p><strong>Kategori:</strong> ${item.category.map(c => getCategoryLabel(c)).join(', ')}</p>
-            <p><strong>Rating:</strong> ${item.rating} ⭐</p>
-            <p><strong>Kalori:</strong> ${item.calories} kalori</p>
-            <p><strong>Harga:</strong> Rp ${item.price.toLocaleString('id-ID')}</p>
-            ${item.oldPrice ? `<p><strong>Harga Lama:</strong> <del>Rp ${item.oldPrice.toLocaleString('id-ID')}</del></p>` : ''}
-        `,
-        showCancelButton: true,
-        confirmButtonText: 'Tambah ke Keranjang',
-        cancelButtonText: 'Tutup',
-        confirmButtonColor: '#001a12',
-        showCloseButton: true
-    }).then((result) => {
-        if (result.isConfirmed) {
-            addToCart(itemId);
+        `;
+    }
+    
+    // Create HTML for reviews
+    let reviewsHtml = '';
+    if (item.reviews && item.reviews.length > 0) {
+        reviewsHtml = `
+            <div class="mt-4">
+                <h6 style="color: var(--primary); font-weight: 700;">Ulasan Pelanggan (${item.reviews.length}):</h6>
+                <div class="mt-3" style="max-height: 200px; overflow-y: auto;">
+                    ${item.reviews.map(review => `
+                        <div class="border-bottom pb-3 mb-3">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <strong>${review.name}</strong>
+                                    <div class="text-warning" style="font-size: 0.9rem;">
+                                        ${getStarRating(review.rating)}
+                                    </div>
+                                </div>
+                                <small class="text-muted">${formatDate(new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString())}</small>
+                            </div>
+                            <p class="mb-0" style="font-size: 0.9rem;">${review.comment}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    // Create HTML for nutrition info
+    const nutritionHtml = `
+        <div class="row mt-3">
+            <div class="col-6">
+                <div class="text-center p-2 border rounded">
+                    <div style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">${item.calories}</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Kalori</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="text-center p-2 border rounded">
+                    <div style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">${item.prepTime || 5}</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Menit Penyajian</div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Create modal content
+    const modalHtml = `
+        <div class="row">
+            <div class="col-md-5">
+                <div class="text-center mb-3">
+                    <img src="${item.image}" alt="${item.name}" 
+                         style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+                ${nutritionHtml}
+            </div>
+            <div class="col-md-7">
+                <h4 style="color: var(--primary); font-weight: 900;">${item.name}</h4>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="text-warning me-2">
+                        ${getStarRating(item.rating)}
+                    </div>
+                    <span class="me-3" style="font-weight: 600;">${item.rating}</span>
+                    <span class="text-muted">(${item.sold || 0} terjual)</span>
+                </div>
+                
+                <p style="color: var(--dark); line-height: 1.6;">${item.description}</p>
+                
+                <div class="mb-3">
+                    <span class="badge" style="background: rgba(0, 26, 18, 0.1); color: var(--primary); font-weight: 600; margin-right: 5px;">
+                        <i class="fas fa-${getCategoryIcon(item.category[0])} me-1"></i> ${getCategoryLabel(item.category[0])}
+                    </span>
+                    ${item.category.slice(1).map(cat => 
+                        `<span class="badge bg-light text-dark border me-1" style="font-weight: 500;">
+                            <i class="fas fa-${getCategoryIcon(cat)} me-1"></i> ${getCategoryLabel(cat)}
+                        </span>`
+                    ).join('')}
+                </div>
+                
+                ${ingredientsHtml}
+                
+                <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                    <div>
+                        <h3 style="color: var(--primary); font-weight: 900; margin: 0;">
+                            Rp ${item.price.toLocaleString('id-ID')}
+                        </h3>
+                        ${item.oldPrice ? 
+                            `<del style="color: var(--gray); font-size: 1rem;">Rp ${item.oldPrice.toLocaleString('id-ID')}</del>
+                             <span class="badge bg-danger ms-2">Hemat ${Math.round((1 - item.price/item.oldPrice) * 100)}%</span>` 
+                            : ''}
+                    </div>
+                    <button class="btn" onclick="addToCart(${item.id}); Swal.close();" 
+                            style="background: var(--primary); color: white; font-weight: 700; padding: 10px 25px; border-radius: 8px;">
+                        <i class="fas fa-cart-plus me-2"></i> Tambah ke Keranjang
+                    </button>
+                </div>
+            </div>
+        </div>
+        ${reviewsHtml}
+    `;
+    
+    Swal.fire({
+        title: '',
+        html: modalHtml,
+        width: 900,
+        showCloseButton: true,
+        showConfirmButton: false,
+        customClass: {
+            popup: 'rounded-3'
+        },
+        didOpen: () => {
+            // Add custom styling to SweetAlert modal
+            const modal = document.querySelector('.swal2-popup');
+            if (modal) {
+                modal.style.padding = '30px';
+            }
         }
     });
 }
@@ -820,7 +1147,9 @@ window.goToCheckout = function() {
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Login',
-            cancelButtonText: 'Nanti'
+            cancelButtonText: 'Nanti',
+            confirmButtonColor: '#001a12',
+            cancelButtonColor: '#6c757d'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = '/login';
@@ -833,7 +1162,8 @@ window.goToCheckout = function() {
         Swal.fire({
             title: 'Keranjang Kosong',
             text: 'Tambahkan item terlebih dahulu sebelum checkout',
-            icon: 'warning'
+            icon: 'warning',
+            confirmButtonColor: '#001a12'
         });
         return;
     }
@@ -852,22 +1182,31 @@ function showNotification(type, message) {
         title: message,
         showConfirmButton: false,
         timer: 2000,
-        timerProgressBar: true
+        timerProgressBar: true,
+        background: 'white',
+        color: 'var(--dark)',
+        iconColor: type === 'success' ? 'var(--success)' : 
+                   type === 'error' ? 'var(--danger)' : 
+                   type === 'warning' ? 'var(--warning)' : 'var(--info)'
     });
 }
 
 // Cart toggle functions
 cartToggle.addEventListener('click', toggleCart);
 
-mobileCartToggle.addEventListener('click', function(e) {
-    e.preventDefault();
-    toggleCart();
-});
+if (mobileCartToggle) {
+    mobileCartToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleCart();
+    });
+}
 
-bottomBarCartToggle.addEventListener('click', function(e) {
-    e.preventDefault();
-    toggleCart();
-});
+if (bottomBarCartToggle) {
+    bottomBarCartToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleCart();
+    });
+}
 
 cartClose.addEventListener('click', closeCart);
 
@@ -876,11 +1215,13 @@ overlay.addEventListener('click', closeCart);
 function toggleCart() {
     cartSidebar.classList.add('active');
     overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
 function closeCart() {
     cartSidebar.classList.remove('active');
     overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
 }
 
 // Close cart with ESC key
@@ -914,7 +1255,8 @@ window.logout = function() {
                 text: 'Anda telah keluar dari akun',
                 icon: 'success',
                 timer: 2000,
-                showConfirmButton: false
+                showConfirmButton: false,
+                confirmButtonColor: '#001a12'
             });
         }
     });
@@ -968,8 +1310,18 @@ window.simulateLogin = function(role = 'siswa') {
     };
     
     localStorage.setItem('kantinSehatUser', JSON.stringify(users[role]));
-    alert(`Login sebagai ${role} berhasil!`);
-    location.reload();
+    Swal.fire({
+        title: 'Login Berhasil!',
+        text: `Anda login sebagai ${role}`,
+        icon: 'success',
+        timer: 2000,
+        showConfirmButton: false,
+        confirmButtonColor: '#001a12'
+    });
+    
+    setTimeout(() => {
+        location.reload();
+    }, 2000);
 };
 
 // Demo function for adding frequent menu data
@@ -1017,7 +1369,8 @@ window.addDemoFrequentMenus = function() {
         text: 'Data menu sering dibeli telah ditambahkan untuk demo.',
         icon: 'success',
         timer: 2000,
-        showConfirmButton: false
+        showConfirmButton: false,
+        confirmButtonColor: '#001a12'
     });
 };
 
@@ -1027,7 +1380,8 @@ window.simulatePurchase = function() {
         Swal.fire({
             title: 'Keranjang Kosong!',
             text: 'Tambahkan item ke keranjang terlebih dahulu',
-            icon: 'warning'
+            icon: 'warning',
+            confirmButtonColor: '#001a12'
         });
         return;
     }
@@ -1046,6 +1400,18 @@ window.simulatePurchase = function() {
         text: 'Terima kasih telah berbelanja. Item telah ditambahkan ke riwayat.',
         icon: 'success',
         timer: 3000,
-        showConfirmButton: false
+        showConfirmButton: false,
+        confirmButtonColor: '#001a12'
     });
 };
+
+// Scroll to promo section
+document.querySelectorAll('a[href="#promo"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const promoSection = document.getElementById('promo');
+        if (promoSection) {
+            promoSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
