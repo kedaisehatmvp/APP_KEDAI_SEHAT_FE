@@ -482,67 +482,7 @@
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <a href="/" class="footer-logo">
-                        <i class="fas fa-seedling me-2"></i>Kantin<span>Sehat</span>
-                    </a>
-                    <div class="footer-about">
-                        <p>Menyediakan makanan sehat dan bergizi untuk mendukung gaya hidup sehat masyarakat sekolah.</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <div class="footer-links">
-                        <h5>Menu</h5>
-                        <ul>
-                            <li><a href="/menu">Semua Menu</a></li>
-                            <li><a href="/menu?category=makanan">Makanan</a></li>
-                            <li><a href="/menu?category=minuman">Minuman</a></li>
-                            <li><a href="/menu?category=cemilan">Cemilan</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <div class="footer-links">
-                        <h5>Layanan</h5>
-                        <ul>
-                            <li><a href="/order-history">Riwayat Pesanan</a></li>
-                            <li><a href="#promo">Promo & Diskon</a></li>
-                            <li><a href="/faq">FAQ</a></li>
-                            <li><a href="/contact">Kontak Kami</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <div class="footer-links">
-                        <h5>Kontak</h5>
-                        <ul class="contact-info">
-                            <li><i class="fas fa-map-marker-alt"></i> Jl. Sehat No. 123, Jakarta</li>
-                            <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
-                            <li><i class="fas fa-envelope"></i> info@kantinsehat.com</li>
-                            <li><i class="fas fa-clock"></i> Senin-Jumat: 07.00-15.00</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2024 Kantin Sehat. Semua hak dilindungi.</p>
-            </div>
-        </div>
-    </footer>
+
 
     <!-- ===== SCRIPTS ===== -->
     <!-- Bootstrap JS -->
