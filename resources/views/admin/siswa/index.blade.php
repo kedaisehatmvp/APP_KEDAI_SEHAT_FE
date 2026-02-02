@@ -68,34 +68,42 @@
                         <th>Nama Siswa</th>
                         <th>Kelas</th>
                         <th>Jurusan</th>
+                        <th>Nama Ibu</th>
+                        <th>Nama Ayah</th>
+                        <th>Tempat Lahir</th>
+                        <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($siswa as $item)
-                        <tr>
-                            <td>{{ $item->nis }}</td>
-                            <td>{{ $item->nama_siswa }}</td>
-                            <td>{{ $item->kelas }}</td>
-                            <td>{{ $item->jurusan }}</td>
-                            <td>{{ $item->gender == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
-                            <td>
-                                <div class="action-buttons d-flex justify-content-center gap-1">
-                                    <a href="{{ route('admin.siswa.show', $item->id_siswa) }}" class="btn btn-view btn-sm" title="Detail">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                    <a href="{{ route('admin.siswa.edit', $item->id_siswa) }}" class="btn btn-edit btn-sm" title="Edit">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <button type="button" class="btn btn-delete btn-sm btn-delete-trigger"
-                                        data-id="{{ $item->id }}"
-                                        data-name="Siswa {{ $item->nama_siswa }}">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>{{ $item->nis }}</td>
+                        <td>{{ $item->nama_siswa }}</td>
+                        <td>{{ $item->kelas }}</td>
+                        <td>{{ $item->jurusan }}</td>
+                        <td>{{ $item->nama_ibu }}</td>
+                        <td>{{ $item->nama_ayah }}</td>
+                        <td>{{ $item->tempat_lahir }}</td>
+                        <td>{{$item->tgl_lahir}}</td>
+                        <td>{{ $item->gender == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
+                        <td>
+                            <div class="action-buttons d-flex justify-content-center gap-1">
+                                <a href="{{ route('admin.siswa.show', $item->id_siswa) }}" class="btn btn-view btn-sm" title="Detail">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="{{ route('admin.siswa.edit', $item->id_siswa) }}" class="btn btn-edit btn-sm" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <button type="button" class="btn btn-delete btn-sm btn-delete-trigger"
+                                    data-id="{{ $item->id }}"
+                                    data-name="Siswa {{ $item->nama_siswa }}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
                     @endforeach
                 </tbody>
             </table>
