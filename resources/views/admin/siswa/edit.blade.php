@@ -69,6 +69,40 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
+                                        <label for="nama_ibu" class="form-label">Nama Ibu <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-kantin" id="nama_ibu" name="nama_ibu"
+                                            value="{{ $siswa->nama_ibu }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="nama_ayah" class="form-label">Nama Ayah <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-kantin" id="nama_ayah" name="nama_ayah"
+                                            value="{{ $siswa->nama_ayah }}" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="tempat_lahir" class="form-label">Tempat Lahir <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-kantin" id="tempat_lahir" name="tempat_lahir"
+                                            value="{{ $siswa->tempat_lahir }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="tgl_lahir" class="form-label">Tanggal Lahir <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control form-control-kantin" id="tgl_lahir" name="tgl_lahir"
+                                            value="{{ $siswa->tgl_lahir }}" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
                                         <label for="gender" class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
                                         <div class="d-flex gap-3 mt-2">
                                             <div class="form-check">
