@@ -54,6 +54,10 @@
                             <div class="card-body">
                                 <table class="table table-sm mb-0">
                                     <tr>
+                                        <td><strong>NIS</strong></td>
+                                        <td><span class="badge bg-secondary">{{ $siswa->nis }}</span></td>
+                                    </tr>
+                                    <tr>
                                         <td><strong>Kelas</strong></td>
                                         <td><span class="badge bg-secondary">{{ $siswa->kelas }}</span></td>
                                     </tr>
@@ -78,18 +82,6 @@
                                             <tr>
                                                 <th width="30%">Nama Lengkap</th>
                                                 <td>: {{ $siswa->nama_siswa }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Nomor Induk Siswa (NIS)</th>
-                                                <td>: {{ $siswa->nis }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Kelas</th>
-                                                <td>: {{ $siswa->kelas }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Jurusan</th>
-                                                <td>: {{ $siswa->jurusan }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Nama Ibu</th>
