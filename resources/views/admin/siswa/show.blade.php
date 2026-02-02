@@ -92,6 +92,22 @@
                                                 <td>: {{ $siswa->jurusan }}</td>
                                             </tr>
                                             <tr>
+                                                <th>Nama Ibu</th>
+                                                <td>: {{ $siswa->nama_ibu }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Nama Ayah</th>
+                                                <td>: {{ $siswa->nama_ayah }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Tempat Lahir</th>
+                                                <td>: {{ $siswa->tempat_lahir }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Tanggal Lahir</th>
+                                                <td>: {{ $siswa->tgl_lahir }}</td>
+                                            </tr>
+                                            <tr>
                                                 <th>Jenis Kelamin</th>
                                                 <td>:
                                                     @if(($siswa->gender ?? 'P') == 'L')
