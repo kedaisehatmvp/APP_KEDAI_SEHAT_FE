@@ -26,7 +26,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card mb-4">
+                        <div class="card mb-5">
                             <div class="card-body text-center">
                                 <div class="mb-3">
                                     <img src="https://ui-avatars.com/api/?name={{ urlencode($siswa->nama_siswa) }}&background=007bff&color=fff&size=200"
