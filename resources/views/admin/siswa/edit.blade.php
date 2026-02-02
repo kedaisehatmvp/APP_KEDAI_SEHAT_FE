@@ -13,10 +13,10 @@
     <div class="col-12">
         <div class="card card-kantin shadow-sm">
             <div class="card-header">
-                <h5 class="mb-0">Edit Data Siswa #{{ $id ?? '222310101' }}</h5>
+                <h5 class="mb-0">Edit Data Siswa {{ $siswa->nama_siswa }}</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.siswa.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.siswa.update', $siswa->id_siswa) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -27,14 +27,14 @@
                                     <div class="mb-3">
                                         <label for="nis" class="form-label">NIS (Nomor Induk Siswa) <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control form-control-kantin" id="nis" name="nis"
-                                            value="222310101" required>
+                                            value="{{ $siswa->nis }}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control form-control-kantin" id="name" name="name"
-                                            value="Ahmad Budiman" required>
+                                        <input type="text" class="form-control form-control-kantin" id="name" name="nama_siswa"
+                                            value="{{ $siswa->nama_siswa }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -45,9 +45,9 @@
                                         <label for="kelas" class="form-label">Kelas <span class="text-danger">*</span></label>
                                         <select class="form-control form-control-kantin" id="kelas" name="kelas" required>
                                             <option value="">Pilih Kelas</option>
-                                            <option value="10" selected>10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
+                                            <option value="X" {{ $siswa->kelas == 'X' ? 'selected' : '' }}>10</option>
+                                            <option value="XI" {{ $siswa->kelas == 'XI' ? 'selected' : '' }}>11</option>
+                                            <option value="XII" {{ $siswa->kelas == 'XII' ? 'selected' : '' }}>12</option>
                                         </select>
                                     </div>
                                 </div>
@@ -56,11 +56,11 @@
                                         <label for="jurusan" class="form-label">Jurusan <span class="text-danger">*</span></label>
                                         <select class="form-control form-control-kantin" id="jurusan" name="jurusan" required>
                                             <option value="">Pilih Jurusan</option>
-                                            <option value="RPL" selected>Rekayasa Perangkat Lunak</option>
-                                            <option value="TKJ">Teknik Komputer Jaringan</option>
-                                            <option value="MM">Multimedia</option>
-                                            <option value="AKL">Akuntansi</option>
-                                            <option value="OTKP">Perkantoran</option>
+                                            <option value="RPL" {{ $siswa->jurusan == 'RPL' ? 'selected' : '' }}>Rekayasa Perangkat Lunak</option>
+                                            <option value="TKJ" {{ $siswa->jurusan == 'TKJ' ? 'selected' : '' }}>Teknik Komputer Jaringan</option>
+                                            <option value="MM" {{ $siswa->jurusan == 'MM' ? 'selected' : '' }}>Multimedia</option>
+                                            <option value="AKL" {{ $siswa->jurusan == 'AKL' ? 'selected' : '' }}>Akuntansi</option>
+                                            <option value="OTKP" {{ $siswa->jurusan == 'OTKP' ? 'selected' : '' }}>Perkantoran</option>
                                         </select>
                                     </div>
                                 </div>
@@ -72,11 +72,11 @@
                                         <label for="gender" class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
                                         <div class="d-flex gap-3 mt-2">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="male" value="L" checked>
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="L" {{ $siswa->gender == 'L' ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="male">Laki-laki</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="female" value="P">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="P" {{ $siswa->gender == 'P' ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="female">Perempuan</label>
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="photo" class="form-label">Foto Siswa</label>
                                 <div class="card border-dashed p-3 text-center">
@@ -96,13 +96,13 @@
                                     <small class="text-muted d-block mt-2">Format: JPG, PNG. Max: 2MB</small>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <hr>
 
                     <div class="d-flex justify-content-between align-items-center mt-4">
-                        <button type="button" class="btn btn-outline-danger btn-delete" data-id="{{ $id ?? 1 }}">
+                        <button type="button" class="btn btn-outline-danger btn-delete" data-id="{{ $siswa->id_siswa }}">
                             <i class="fas fa-trash me-2"></i> Hapus Data Siswa
                         </button>
 

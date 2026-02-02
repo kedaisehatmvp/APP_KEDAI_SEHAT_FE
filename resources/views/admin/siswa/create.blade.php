@@ -44,9 +44,9 @@
                                         <label for="kelas" class="form-label">Kelas <span class="text-danger">*</span></label>
                                         <select class="form-select" id="kelas" name="kelas" required style="height: 41px;">
                                             <option value="" selected disabled>Pilih Kelas</option>
-                                            <option value="10">Kelas 10</option>
-                                            <option value="11">Kelas 11</option>
-                                            <option value="12">Kelas 12</option>
+                                            <option value="X">Kelas 10</option>
+                                            <option value="XI">Kelas 11</option>
+                                            <option value="XII">Kelas 12</option>
                                         </select>
                                     </div>
                                 </div>
@@ -58,9 +58,11 @@
                                             <option value="" selected disabled>Pilih Jurusan</option>
                                             <option value="RPL">Rekayasa Perangkat Lunak</option>
                                             <option value="TKJ">Teknik Komputer Jaringan</option>
-                                            <option value="MM">Multimedia</option>
+                                            <option value="TBSM">Teknik dan Bisnis Sepeda Motor</option>
                                             <option value="AKL">Akuntansi</option>
-                                            <option value="OTKP">Perkantoran</option>
+                                            <option value="MP">Manajemen Perkantoran</option>
+                                            <option value="FKK">Farmasi Klinis dan Komunitas</option>
+                                            <option value="JB">Jasa Boga</option>
                                         </select>
                                     </div>
                                 </div>
@@ -72,11 +74,11 @@
                                         <label for="gender" class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
                                         <div class="d-flex gap-3 mt-2">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="g1" value="Laki-laki" checked>
+                                                <input class="form-check-input" type="radio" name="gender" id="g1" value="L" checked>
                                                 <label class="form-check-label" for="g1">Laki-laki</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="g2" value="Perempuan">
+                                                <input class="form-check-input" type="radio" name="gender" id="g2" value="P">
                                                 <label class="form-check-label" for="g2">Perempuan</label>
                                             </div>
                                         </div>

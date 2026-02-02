@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiswaController;
 
 Route::get('/', function () {
     return view('landing');
@@ -73,33 +74,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
     })->name('users.destroy');
 
     // siswa CRUD routes
-    Route::get('/siswa', function () {
-        return view('admin.siswa.index');
-    })->name('siswa.index');
+    Route::get('/siswa', [SiswaController::class, 'index'])
+    ->name('siswa.index');
 
-    Route::get('/siswa/create', function () {
-        return view('admin.siswa.create');
-    })->name('siswa.create');
+    Route::get('/siswa/create', [SiswaController::class, 'create'])
+    ->name('siswa.create');
 
-    Route::get('/siswa/{id}/edit', function ($id) {
-        $user = (object)[
-            'id' => $id,
-            'nama' => 'Ahmad Budiman', 
-            'nis' => '222310101',
-            'kelas' => '10',
-            'jurusan' => 'RPL',
-            'gender' => 'L' 
-        ];
-        return view('admin.siswa.edit', compact('user', 'id'));
-    })->name('siswa.edit');
+    // Route::post('/save', [SiswaController::class, 'saveSiswa'])
+    // ->name('siswa.save');
 
-    Route::put('/siswa/{id}', function ($id) {
-        return redirect()->route('admin.siswa.index')->with('success', 'Data siswa berhasil diperbarui');
-    })->name('siswa.update');
+    Route::get('/siswa/{id}/edit', [SiswaController::class, 'edit'])
+    ->name('siswa.edit');
 
-    Route::get('/siswa/{id}/show', function ($id) {
-        return view('admin.siswa.show', ['id' => $id]);
-    })->name('siswa.show');
+    Route::put('/siswa/{id}', [SiswaController::class, 'update'])
+    ->name('siswa.update');
+
+    Route::get('/siswa/{id}/show', [SiswaController::class, 'show'])
+    ->name('siswa.show');
 
     Route::delete('/siswa/{id}', function ($id) {
         return redirect()->route('admin.siswa.index')->with('success', 'Data siswa berhasil dihapus');

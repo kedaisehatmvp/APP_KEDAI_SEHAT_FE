@@ -13,9 +13,9 @@
     <div class="col-12">
         <div class="card card-kantin">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Detail Siswa #{{ $nis ?? '222310101' }}</h5>
+                <h5 class="mb-0">Detail Siswa {{ $siswa->nama_siswa }}</h5>
                 <div class="btn-group">
-                    <a href="{{ route('admin.siswa.edit', $id ?? 1) }}" class="btn btn-warning">
+                    <a href="{{ route('admin.siswa.edit', $siswa->id_siswa) }}" class="btn btn-warning">
                         <i class="fas fa-edit me-2"></i>Edit
                     </a>
                     <a href="{{ route('admin.siswa.index') }}" class="btn btn-kantin-outline">
@@ -29,15 +29,14 @@
                         <div class="card mb-4">
                             <div class="card-body text-center">
                                 <div class="mb-3">
-                                    <img src="https://ui-avatars.com/api/?name={{ urlencode($nama ?? 'Siswa 1') }}&background=007bff&color=fff&size=200"
+                                    <img src="https://ui-avatars.com/api/?name={{ urlencode($siswa->nama_siswa) }}&background=007bff&color=fff&size=200"
                                         class="rounded-circle border border-3 border-primary"
                                         alt="Foto Siswa"
                                         style="width: 150px; height: 150px; object-fit: cover;">
                                 </div>
-
-                                <h4 class="mb-1">{{ $nama ?? 'Siswa 1' }}</h4>
+                                <h4 class="mb-1">{{ $siswa->nama_siswa }}</h4>
                                 <p class="text-muted mb-3">
-                                    <i class="fas fa-id-card me-1"></i>NIS: {{ $nis ?? '222310101' }}
+                                    <i class="fas fa-id-card me-1"></i>NIS: {{ $siswa->nis }}
                                 </p>
 
                                 <div class="mb-3">
@@ -56,11 +55,11 @@
                                 <table class="table table-sm mb-0">
                                     <tr>
                                         <td><strong>Kelas</strong></td>
-                                        <td><span class="badge bg-secondary">{{ $kelas ?? '10' }}</span></td>
+                                        <td><span class="badge bg-secondary">{{ $siswa->kelas }}</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Jurusan</strong></td>
-                                        <td><span class="badge bg-dark">{{ $jurusan ?? 'OTKP' }}</span></td>
+                                        <td><span class="badge bg-dark">{{ $siswa->jurusan }}</span></td>
                                     </tr>
                                 </table>
                             </div>
@@ -78,24 +77,24 @@
                                         <table class="table table-striped">
                                             <tr>
                                                 <th width="30%">Nama Lengkap</th>
-                                                <td>: {{ $nama ?? 'Siswa 1' }}</td>
+                                                <td>: {{ $siswa->nama_siswa }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Nomor Induk Siswa (NIS)</th>
-                                                <td>: {{ $nis ?? '222310101' }}</td>
+                                                <td>: {{ $siswa->nis }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Kelas</th>
-                                                <td>: {{ $kelas ?? '10' }}</td>
+                                                <td>: {{ $siswa->kelas }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Jurusan</th>
-                                                <td>: {{ $jurusan ?? 'Otomatisasi & Tata Kelola Perkantoran' }}</td>
+                                                <td>: {{ $siswa->jurusan }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Jenis Kelamin</th>
                                                 <td>:
-                                                    @if(($gender ?? 'Perempuan') == 'Laki-laki')
+                                                    @if(($siswa->gender ?? 'P') == 'L')
                                                     <i class="fas fa-mars text-primary me-1"></i> Laki-laki
                                                     @else
                                                     <i class="fas fa-venus text-danger me-1"></i> Perempuan
