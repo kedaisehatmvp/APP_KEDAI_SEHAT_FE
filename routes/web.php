@@ -74,27 +74,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
     })->name('users.destroy');
 
     // siswa CRUD routes
-    Route::get('/siswa', [SiswaController::class, 'index'])
-    ->name('siswa.index');
-
-    Route::get('/siswa/create', [SiswaController::class, 'create'])
-    ->name('siswa.create');
-
-    // Route::post('/save', [SiswaController::class, 'saveSiswa'])
-    // ->name('siswa.save');
-
-    Route::get('/siswa/{id}/edit', [SiswaController::class, 'edit'])
-    ->name('siswa.edit');
-
-    Route::put('/siswa/{id}', [SiswaController::class, 'update'])
-    ->name('siswa.update');
-
-    Route::get('/siswa/{id}/show', [SiswaController::class, 'show'])
-    ->name('siswa.show');
-
-    Route::delete('/siswa/{id}', function ($id) {
-        return redirect()->route('admin.siswa.index')->with('success', 'Data siswa berhasil dihapus');
-    })->name('siswa.destroy');
+    Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+    Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+    Route::post('/admin/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+    Route::get('/siswa/{id}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+    Route::put('/siswa/{id}', [SiswaController::class, 'update'])->name('siswa.update');
+    Route::get('/siswa/{id}/show', [SiswaController::class, 'show'])->name('siswa.show');
+    Route::delete('/siswa/{id}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
     
     // Products CRUD Routes
     Route::get('/products', function () {

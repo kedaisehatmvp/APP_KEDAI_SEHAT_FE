@@ -188,14 +188,28 @@
         $('#createSiswaForm').on('submit', function(e) {
             e.preventDefault();
             const btn = $('#btnSave');
-
+            
             btn.html('<span class="spinner-border spinner-border-sm me-2"></span> Memproses...').attr('disabled', true);
 
-            // Simulasi pengiriman data
-            setTimeout(function() {
-                $('#successModal').modal('show');
-                btn.html('<i class="fas fa-save me-2"></i> Simpan Data Siswa').attr('disabled', false);
-            }, 1200);
+            // Kirim data via AJAX
+            let formData = new FormData(this);
+            
+            $.ajax({
+                url: "{{ route('admin.siswa.store') }}", // Pastikan route ini ada!
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    if(response.success) {
+                        $('#successModal').modal('show');
+                    }
+                },
+                error: function(xhr) {
+                    alert('Error: ' + xhr.responseJSON.message);
+                    btn.html('<i class="fas fa-save me-2"></i> Simpan Data Siswa').attr('disabled', false);
+                }
+            });
         });
     });
 </script>

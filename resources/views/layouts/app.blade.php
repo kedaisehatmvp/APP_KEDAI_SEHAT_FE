@@ -742,16 +742,14 @@
             </a>
 
             <!-- Data Users -->
-            <a href="{{ url('/admin/users') }}"
-                class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
+            <a href="{{ url('/admin/users') }}" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
                 <i class="fas fa-users"></i> Data Users
                 <span class="badge">24</span>
             </a>
 
             <!-- Data Siswa -->
 
-            <a href="{{ url('/admin/siswa') }}"
-                class="nav-link {{ request()->is('admin/siswa*') ? 'active' : '' }}">
+            <a href="{{ url('/admin/siswa') }}" class="nav-link {{ request()->is('admin/siswa*') ? 'active' : '' }}">
                 <i class="fas fa-users"></i> Data Siswa
                 <span class="badge">11</span>
             </a>
@@ -765,8 +763,7 @@
             </a>
 
             <!-- Data Pesanan -->
-            <a href="{{ url('/admin/orders') }}"
-                class="nav-link {{ request()->is('admin/orders*') ? 'active' : '' }}">
+            <a href="{{ url('/admin/orders') }}" class="nav-link {{ request()->is('admin/orders*') ? 'active' : '' }}">
                 <i class="fas fa-shopping-cart"></i> Data Pesanan
                 <span class="badge bg-warning">5</span>
             </a>
@@ -808,11 +805,8 @@
                 <div class="navbar-nav ms-auto align-items-center">
                     <!-- NOTIFICATION BELL -->
                     <div class="nav-item dropdown me-3">
-                        <a class="nav-link nav-notification position-relative"
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link nav-notification position-relative" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-bell text-primary-kantin"></i>
                             <!-- Notification Badge -->
                             <span class="badge bg-danger rounded-pill notification-badge">3</span>
@@ -849,10 +843,13 @@
                                                 #ORD123 dari Budi Santoso • Total: Rp 85.000
                                             </p>
                                             <div class="notification-actions">
-                                                <a href="#" class="btn btn-sm btn-outline-primary btn-sm py-0 px-2 me-1">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-primary btn-sm py-0 px-2 me-1">
                                                     Lihat
                                                 </a>
-                                                <a href="#" class="btn btn-sm btn-outline-secondary btn-sm py-0 px-2 mark-as-read" data-id="1">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-secondary btn-sm py-0 px-2 mark-as-read"
+                                                    data-id="1">
                                                     Tandai
                                                 </a>
                                             </div>
@@ -874,10 +871,13 @@
                                                 Produk "Salad Buah" tersisa 2 porsi. Segera restok!
                                             </p>
                                             <div class="notification-actions">
-                                                <a href="#" class="btn btn-sm btn-outline-warning btn-sm py-0 px-2 me-1">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-warning btn-sm py-0 px-2 me-1">
                                                     Restok
                                                 </a>
-                                                <a href="#" class="btn btn-sm btn-outline-secondary btn-sm py-0 px-2 mark-as-read" data-id="2">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-secondary btn-sm py-0 px-2 mark-as-read"
+                                                    data-id="2">
                                                     Tandai
                                                 </a>
                                             </div>
@@ -949,13 +949,10 @@
 
                     <!-- USER MENU -->
                     <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle nav-user"
-                            href="#" role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle nav-user" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://ui-avatars.com/api/?name=Admin+Kantin&background=28a745&color=fff&size=64"
-                                class="user-avatar"
-                                alt="Admin">
+                                class="user-avatar" alt="Admin">
                             <div class="user-info d-none d-md-block">
                                 <div class="user-name">Admin Kantin</div>
                                 <div class="user-role">
@@ -997,54 +994,54 @@
         <!-- ===== CONTENT AREA ===== -->
         <div class="container-fluid">
             <!-- Flash Messages -->
-            @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show shadow-kantin" role="alert">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-check-circle me-2 fa-lg"></i>
-                    <div class="flex-grow-1">{{ session('success') }}</div>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show shadow-kantin" role="alert">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle me-2 fa-lg"></i>
+                        <div class="flex-grow-1">{{ session('success') }}</div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
                 </div>
-            </div>
             @endif
 
-            @if(session('error'))
-            <div class="alert alert-danger alert-dismissible fade show shadow-kantin" role="alert">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-exclamation-circle me-2 fa-lg"></i>
-                    <div class="flex-grow-1">{{ session('error') }}</div>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show shadow-kantin" role="alert">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-exclamation-circle me-2 fa-lg"></i>
+                        <div class="flex-grow-1">{{ session('error') }}</div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
                 </div>
-            </div>
             @endif
 
-            @if(session('warning'))
-            <div class="alert alert-warning alert-dismissible fade show shadow-kantin" role="alert">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-exclamation-triangle me-2 fa-lg"></i>
-                    <div class="flex-grow-1">{{ session('warning') }}</div>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            @if (session('warning'))
+                <div class="alert alert-warning alert-dismissible fade show shadow-kantin" role="alert">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-exclamation-triangle me-2 fa-lg"></i>
+                        <div class="flex-grow-1">{{ session('warning') }}</div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
                 </div>
-            </div>
             @endif
 
             <!-- Page Header (can be overridden by child views) -->
             @hasSection('page-header')
-            @yield('page-header')
+                @yield('page-header')
             @else
-            <div class="page-header">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h1 class="mb-2">
-                            <i class="fas @yield('title-icon', 'fa-tachometer-alt') me-2"></i>
-                            @yield('title', 'Dashboard')
-                        </h1>
-                        <p class="mb-0">@yield('subtitle', 'Selamat datang di Kantin Sehat Admin Panel')</p>
+                <div class="page-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="mb-2">
+                                <i class="fas @yield('title-icon', 'fa-tachometer-alt') me-2"></i>
+                                @yield('title', 'Dashboard')
+                            </h1>
+                            <p class="mb-0">@yield('subtitle', 'Selamat datang di Kantin Sehat Admin Panel')</p>
+                        </div>
+                        @hasSection('header-button')
+                            @yield('header-button')
+                        @endif
                     </div>
-                    @hasSection('header-button')
-                    @yield('header-button')
-                    @endif
                 </div>
-            </div>
             @endif
 
             <!-- Main Content -->
@@ -1294,11 +1291,15 @@
                 }
             }
 
-            // ===== DELETE CONFIRMATION =====
+            // ===== DELETE CONFIRMATION WITH AJAX (Simple Version) =====
             $(document).on('click', '.btn-delete', function(e) {
                 e.preventDefault();
-                const url = $(this).attr('href');
-                const itemName = $(this).data('item-name') || 'data ini';
+
+                const button = $(this);
+                const form = button.closest('form.delete-form');
+                const url = form.attr('action');
+                const itemName = button.data('name') || 'data ini';
+                const row = button.closest('tr');
 
                 Swal.fire({
                     title: 'Apakah Anda yakin?',
@@ -1312,7 +1313,56 @@
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = url;
+                        // Show loading
+                        Swal.fire({
+                            title: 'Menghapus...',
+                            allowOutsideClick: false,
+                            didOpen: () => {
+                                Swal.showLoading();
+                            }
+                        });
+
+                        // AJAX Delete
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            data: {
+                                _token: form.find('input[name="_token"]').val(),
+                                _method: 'DELETE'
+                            },
+                            success: function(response) {
+                                if (response.success) {
+                                    // Hapus row
+                                    row.fadeOut(400, function() {
+                                        $(this).remove();
+
+                                        // Update stats
+                                        const totalRows = $('tbody tr:visible')
+                                            .length;
+                                        $('.stats-number').first().text(
+                                            totalRows);
+                                    });
+
+                                    // Success message
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Berhasil!',
+                                        text: response.message ||
+                                            'Data berhasil dihapus',
+                                        timer: 2000,
+                                        showConfirmButton: false
+                                    });
+                                }
+                            },
+                            error: function(xhr) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Gagal!',
+                                    text: xhr.responseJSON?.message ||
+                                        'Terjadi kesalahan saat menghapus data'
+                                });
+                            }
+                        });
                     }
                 });
             });
