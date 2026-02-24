@@ -10,7 +10,7 @@ class KantinGizi extends Model
     use HasFactory;
 
     // Nama tabel
-    protected $table = 'kantin_gizi';
+    protected $table = 'tbl_gizi';
     
     // Primary key
     protected $primaryKey = 'id_gizi';
