@@ -10,7 +10,7 @@ class KantinMenu extends Model
     use HasFactory;
 
     // Nama tabel
-    protected $table = 'kantin_menus';
+    protected $table = 'tbl_menu';
     
     // Primary key
     protected $primaryKey = 'id_menu';
