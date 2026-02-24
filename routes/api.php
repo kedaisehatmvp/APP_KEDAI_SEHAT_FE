@@ -28,11 +28,14 @@ Route::prefix('v1')->group(function () {
     
     // Kantin Menu Routes
     Route::prefix('kantin-menus')->group(function () {
-        Route::get('/', [KantinMenuController::class, 'index']);
-        Route::post('/', [KantinMenuController::class, 'store']);
+        // Specific routes first
         Route::get('/best-seller', [KantinMenuController::class, 'bestSeller']);
         Route::get('/search', [KantinMenuController::class, 'search']);
         Route::get('/kategori/{kategori}', [KantinMenuController::class, 'byKategori']);
+        
+        // Generic routes last
+        Route::get('/', [KantinMenuController::class, 'index']);
+        Route::post('/', [KantinMenuController::class, 'store']);
         Route::get('/{id}', [KantinMenuController::class, 'show']);
         Route::put('/{id}', [KantinMenuController::class, 'update']);
         Route::delete('/{id}', [KantinMenuController::class, 'destroy']);
