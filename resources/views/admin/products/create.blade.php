@@ -221,17 +221,54 @@
             }
         });
 
-        // Submit Form AJAX Simulation
+        // Submit Form AJAX
         $('#createProductForm').on('submit', function(e) {
             e.preventDefault();
             const btn = $('#btnSave');
+            const form = this;
+
+            // Validasi best_seller
+            const isBestSeller = $('#best_seller').is(':checked');
+            
+            // Buat FormData untuk support file upload
+            const formData = new FormData(form);
+            
+            // Tambahkan field best_seller secara eksplisit
+            formData.set('best_seller', isBestSeller ? 1 : 0);
+
             btn.html('<span class="spinner-border spinner-border-sm me-2"></span> Menyimpan...').attr('disabled', true);
 
-            // Simulasi proses simpan
-            setTimeout(function() {
-                $('#successModal').modal('show');
-                btn.html('<i class="fas fa-save me-2"></i> Simpan Produk').attr('disabled', false);
-            }, 1000);
+            $.ajax({
+                url: '/api/v1/kantin-menus',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    if (response.success) {
+                        $('#successModal').modal('show');
+                        $(form).reset();
+                        setTimeout(function() {
+                            window.location.href = '{{ route('admin.products.index') }}';
+                        }, 1500);
+                    }
+                },
+                error: function(xhr) {
+                    btn.html('<i class="fas fa-save me-2"></i> Simpan Produk').attr('disabled', false);
+                    
+                    let errorMessage = 'Gagal menyimpan produk';
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        errorMessage = xhr.responseJSON.message;
+                    }
+                    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Gagal!',
+                        text: errorMessage,
+                        confirmButtonColor: '#3085d6'
+                    });
+                }
+            });
         });
     });
 </script>
