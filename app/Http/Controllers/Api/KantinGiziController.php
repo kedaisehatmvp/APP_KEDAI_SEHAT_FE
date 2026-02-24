@@ -34,7 +34,7 @@ class KantinGiziController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'id_menu' => 'required|exists:kantin_menus,id_menu|unique:kantin_gizi,id_menu',
+            'id_menu' => 'required|exists:tbl_menu,id_menu|unique:tbl_gizi,id_menu',
             'kalori' => 'nullable|numeric|min:0',
             'lemak' => 'nullable|numeric|min:0',
             'serat' => 'nullable|numeric|min:0',
