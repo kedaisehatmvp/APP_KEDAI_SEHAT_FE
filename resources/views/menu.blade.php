@@ -14,14 +14,14 @@
     <!-- Google Fonts - Lato -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('images/ks-h.png')}}" alt="">KantinSehat
+                <img src="images/ks-h.png" alt="">KantinSehat
             </a>
             
             <!-- Desktop Navigation -->
@@ -82,15 +82,12 @@
                         </ul>
                     </div>
 
-                    
                     <!-- Login Button -->
-                    <div id="loginButton" class="d-none">
+                    <div id="loginButton" class="d-block">
                         <a href="/login" class="nav-link">
                             <i class="fas fa-sign-in-alt me-1"></i> Login
                         </a>
                     </div>
-                    
-                  
                     
                     <li class="nav-item ms-2 position-relative">
                         <button class="btn-order" id="cartToggle">
@@ -99,7 +96,7 @@
                         </button>
                     </li>
 
-                      <!-- History Dropdown (Menu Sering Dibeli) -->
+                    <!-- History Dropdown (Menu Sering Dibeli) -->
                     <li class="nav-item dropdown ms-2" id="historyDropdown">
                         <button class="btn btn-transparent dropdown-toggle position-relative" 
                                 type="button" 
@@ -119,7 +116,7 @@
                                 </button>
                             </div>
                             <div class="frequent-menu-body" id="frequentMenuBody">
-                                <!-- Frequent menu items will be loaded here -->
+                                <!-- Frequent menu items will be loaded here by JavaScript -->
                                 <div class="frequent-menu-empty">
                                     <i class="fas fa-clock"></i>
                                     <p>Belum ada riwayat pembelian</p>
@@ -133,7 +130,6 @@
                         </div>
                     </li>
                 </ul>
-                
             </div>
             
             <!-- Mobile Header (Profile + Cart) -->
@@ -180,7 +176,7 @@
                 </div>
                 
                 <!-- Login Button (Mobile) -->
-                <div id="mobileLoginButton" class="d-none">
+                <div id="mobileLoginButton" class="d-block">
                     <a href="/login" class="btn-transparent">
                         <i class="fas fa-sign-in-alt"></i>
                     </a>
@@ -213,7 +209,7 @@
                             </button>
                         </div>
                         <div class="frequent-menu-body" id="mobileFrequentMenuBody">
-                            <!-- Frequent menu items will be loaded here -->
+                            <!-- Frequent menu items will be loaded here by JavaScript -->
                             <div class="frequent-menu-empty">
                                 <i class="fas fa-clock"></i>
                                 <p>Belum ada riwayat pembelian</p>
@@ -348,7 +344,387 @@
             </div>
             
             <div class="menu-grid" id="menuGrid">
-                <!-- Menu items will be loaded here by JavaScript -->
+                <!-- Menu Item 1 -->
+                <div class="menu-item featured" data-id="1" data-category="makanan vegetarian low-calorie" data-price="25000" data-rating="4.8" data-sold="342">
+                    <span class="menu-badge hot"><i class="fas fa-fire"></i> HOT</span>
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Salad Sehat Super" class="menu-img">
+                    </div>
+                    <div class="menu-content">
+                        <span class="menu-category"><i class="fas fa-utensils"></i> Makanan</span>
+                        <h3 class="menu-title">Salad Sehat Super</h3>
+                        <p class="menu-description">Campuran sayuran organik segar (selada, tomat cherry, timun, wortel) dengan dressing khusus rendah kalori dan biji chia.</p>
+                        
+                        <div class="menu-footer">
+                            <div class="menu-price-container">
+                                <div>
+                                    <span class="menu-price">Rp 25.000</span>
+                                    <span class="old-price">
+                                        <span class="menu-old-price">Rp 30.000</span>
+                                    </span>
+                                </div>
+                                <div class="menu-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-info">
+                                <div class="menu-calories">
+                                    <i class="fas fa-fire"></i> 180 kcal
+                                </div>
+                                <div class="menu-sold">
+                                    <i class="fas fa-shopping-bag"></i> 342 terjual
+                                </div>
+                            </div>
+                            
+                            <div class="menu-actions">
+                                <button class="btn-add-to-cart" onclick="addToCart(1, 'Salad Sehat Super', 25000, 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                    <i class="fas fa-cart-plus"></i> Tambah
+                                </button>
+                                <button class="btn-detail" onclick="showDetail(1)" title="Detail">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="menu-item" data-id="2" data-category="minuman vegetarian" data-price="18000" data-rating="5.0" data-sold="215">
+                    <span class="menu-badge new"><i class="fas fa-star"></i> NEW</span>
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jus Detox Mix" class="menu-img">
+                    </div>
+                    <div class="menu-content">
+                        <span class="menu-category"><i class="fas fa-glass-whiskey"></i> Minuman</span>
+                        <h3 class="menu-title">Jus Detox Mix</h3>
+                        <p class="menu-description">Campuran buah-buahan organik (apel hijau, seledri, lemon, jahe) tanpa gula tambahan, kaya vitamin dan antioksidan.</p>
+                        
+                        <div class="menu-footer">
+                            <div class="menu-price-container">
+                                <div>
+                                    <span class="menu-price">Rp 18.000</span>
+                                </div>
+                                <div class="menu-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-info">
+                                <div class="menu-calories">
+                                    <i class="fas fa-fire"></i> 120 kcal
+                                </div>
+                                <div class="menu-sold">
+                                    <i class="fas fa-shopping-bag"></i> 215 terjual
+                                </div>
+                            </div>
+                            
+                            <div class="menu-actions">
+                                <button class="btn-add-to-cart" onclick="addToCart(2, 'Jus Detox Mix', 18000, 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                    <i class="fas fa-cart-plus"></i> Tambah
+                                </button>
+                                <button class="btn-detail" onclick="showDetail(2)" title="Detail">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="menu-item featured" data-id="3" data-category="makanan" data-price="28000" data-rating="4.5" data-sold="478">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nasi Goreng Sehat" class="menu-img">
+                    </div>
+                    <div class="menu-content">
+                        <span class="menu-category"><i class="fas fa-utensils"></i> Makanan</span>
+                        <h3 class="menu-title">Nasi Goreng Sehat</h3>
+                        <p class="menu-description">Nasi merah dengan sayuran organik (wortel, buncis, jagung) dan dada ayam panggang tanpa kulit, dimasak dengan minyak zaitun.</p>
+                        
+                        <div class="menu-footer">
+                            <div class="menu-price-container">
+                                <div>
+                                    <span class="menu-price">Rp 28.000</span>
+                                </div>
+                                <div class="menu-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-info">
+                                <div class="menu-calories">
+                                    <i class="fas fa-fire"></i> 320 kcal
+                                </div>
+                                <div class="menu-sold">
+                                    <i class="fas fa-shopping-bag"></i> 478 terjual
+                                </div>
+                            </div>
+                            
+                            <div class="menu-actions">
+                                <button class="btn-add-to-cart" onclick="addToCart(3, 'Nasi Goreng Sehat', 28000, 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                    <i class="fas fa-cart-plus"></i> Tambah
+                                </button>
+                                <button class="btn-detail" onclick="showDetail(3)" title="Detail">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 4 -->
+                <div class="menu-item" data-id="4" data-category="makanan vegetarian low-calorie" data-price="22000" data-rating="4.7" data-sold="189">
+                    <span class="menu-badge popular"><i class="fas fa-crown"></i> POPULAR</span>
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Smoothie Bowl Berry" class="menu-img">
+                    </div>
+                    <div class="menu-content">
+                        <span class="menu-category"><i class="fas fa-utensils"></i> Makanan</span>
+                        <h3 class="menu-title">Smoothie Bowl Berry</h3>
+                        <p class="menu-description">Smoothie buah berry (strawberry, blueberry, raspberry) dengan topping granola homemade, chia seed, dan potongan buah segar.</p>
+                        
+                        <div class="menu-footer">
+                            <div class="menu-price-container">
+                                <div>
+                                    <span class="menu-price">Rp 22.000</span>
+                                </div>
+                                <div class="menu-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.7</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-info">
+                                <div class="menu-calories">
+                                    <i class="fas fa-fire"></i> 210 kcal
+                                </div>
+                                <div class="menu-sold">
+                                    <i class="fas fa-shopping-bag"></i> 189 terjual
+                                </div>
+                            </div>
+                            
+                            <div class="menu-actions">
+                                <button class="btn-add-to-cart" onclick="addToCart(4, 'Smoothie Bowl Berry', 22000, 'https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                    <i class="fas fa-cart-plus"></i> Tambah
+                                </button>
+                                <button class="btn-detail" onclick="showDetail(4)" title="Detail">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 5 -->
+                <div class="menu-item" data-id="5" data-category="makanan" data-price="20000" data-rating="4.2" data-sold="321">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sandwich Ayam Sehat" class="menu-img">
+                    </div>
+                    <div class="menu-content">
+                        <span class="menu-category"><i class="fas fa-utensils"></i> Makanan</span>
+                        <h3 class="menu-title">Sandwich Ayam Sehat</h3>
+                        <p class="menu-description">Roti gandum dengan ayam panggang, selada, tomat, mentimun, dan saus yogurt rendah lemak. Dikemas dengan rapi untuk dibawa.</p>
+                        
+                        <div class="menu-footer">
+                            <div class="menu-price-container">
+                                <div>
+                                    <span class="menu-price">Rp 20.000</span>
+                                    <span class="old-price">
+                                        <span class="menu-old-price">Rp 25.000</span>
+                                    </span>
+                                </div>
+                                <div class="menu-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.2</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-info">
+                                <div class="menu-calories">
+                                    <i class="fas fa-fire"></i> 280 kcal
+                                </div>
+                                <div class="menu-sold">
+                                    <i class="fas fa-shopping-bag"></i> 321 terjual
+                                </div>
+                            </div>
+                            
+                            <div class="menu-actions">
+                                <button class="btn-add-to-cart" onclick="addToCart(5, 'Sandwich Ayam Sehat', 20000, 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                    <i class="fas fa-cart-plus"></i> Tambah
+                                </button>
+                                <button class="btn-detail" onclick="showDetail(5)" title="Detail">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 6 -->
+                <div class="menu-item" data-id="6" data-category="minuman vegetarian low-calorie" data-price="12000" data-rating="4.9" data-sold="567">
+                    <span class="menu-badge new"><i class="fas fa-star"></i> NEW</span>
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Teh Hijau Organik" class="menu-img">
+                    </div>
+                    <div class="menu-content">
+                        <span class="menu-category"><i class="fas fa-glass-whiskey"></i> Minuman</span>
+                        <h3 class="menu-title">Teh Hijau Organik</h3>
+                        <p class="menu-description">Teh hijau premium dari daun teh pilihan, diseduh dengan suhu tepat tanpa gula tambahan, kaya antioksidan dan baik untuk metabolisme.</p>
+                        
+                        <div class="menu-footer">
+                            <div class="menu-price-container">
+                                <div>
+                                    <span class="menu-price">Rp 12.000</span>
+                                </div>
+                                <div class="menu-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-info">
+                                <div class="menu-calories">
+                                    <i class="fas fa-fire"></i> 5 kcal
+                                </div>
+                                <div class="menu-sold">
+                                    <i class="fas fa-shopping-bag"></i> 567 terjual
+                                </div>
+                            </div>
+                            
+                            <div class="menu-actions">
+                                <button class="btn-add-to-cart" onclick="addToCart(6, 'Teh Hijau Organik', 12000, 'https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                    <i class="fas fa-cart-plus"></i> Tambah
+                                </button>
+                                <button class="btn-detail" onclick="showDetail(6)" title="Detail">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 7 -->
+                <div class="menu-item featured" data-id="7" data-category="paket vegetarian low-calorie" data-price="75000" data-rating="4.9" data-sold="89">
+                    <span class="menu-badge hot"><i class="fas fa-fire"></i> HOT</span>
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paket Diet Sehat" class="menu-img">
+                    </div>
+                    <div class="menu-content">
+                        <span class="menu-category"><i class="fas fa-box"></i> Paket</span>
+                        <h3 class="menu-title">Paket Diet Sehat</h3>
+                        <p class="menu-description">Paket lengkap untuk diet sehat selama 1 hari terdiri dari sarapan oatmeal, salad makan siang, cemilan edamame, dan makan malam sup sayur.</p>
+                        
+                        <div class="menu-footer">
+                            <div class="menu-price-container">
+                                <div>
+                                    <span class="menu-price">Rp 75.000</span>
+                                    <span class="old-price">
+                                        <span class="menu-old-price">Rp 90.000</span>
+                                    </span>
+                                </div>
+                                <div class="menu-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-info">
+                                <div class="menu-calories">
+                                    <i class="fas fa-fire"></i> 450 kcal
+                                </div>
+                                <div class="menu-sold">
+                                    <i class="fas fa-shopping-bag"></i> 89 terjual
+                                </div>
+                            </div>
+                            
+                            <div class="menu-actions">
+                                <button class="btn-add-to-cart" onclick="addToCart(7, 'Paket Diet Sehat', 75000, 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                    <i class="fas fa-cart-plus"></i> Tambah
+                                </button>
+                                <button class="btn-detail" onclick="showDetail(7)" title="Detail">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 8 -->
+                <div class="menu-item" data-id="8" data-category="cemilan vegetarian low-calorie" data-price="18000" data-rating="4.6" data-sold="234">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Yogurt Parfait" class="menu-img">
+                    </div>
+                    <div class="menu-content">
+                        <span class="menu-category"><i class="fas fa-cookie-bite"></i> Cemilan</span>
+                        <h3 class="menu-title">Yogurt Parfait</h3>
+                        <p class="menu-description">Yogurt rendah lemak dengan lapisan granola, buah berry segar, dan madu asli. Disajikan dalam gelas bening yang menarik.</p>
+                        
+                        <div class="menu-footer">
+                            <div class="menu-price-container">
+                                <div>
+                                    <span class="menu-price">Rp 18.000</span>
+                                </div>
+                                <div class="menu-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.6</span>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-info">
+                                <div class="menu-calories">
+                                    <i class="fas fa-fire"></i> 160 kcal
+                                </div>
+                                <div class="menu-sold">
+                                    <i class="fas fa-shopping-bag"></i> 234 terjual
+                                </div>
+                            </div>
+                            
+                            <div class="menu-actions">
+                                <button class="btn-add-to-cart" onclick="addToCart(8, 'Yogurt Parfait', 18000, 'https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                    <i class="fas fa-cart-plus"></i> Tambah
+                                </button>
+                                <button class="btn-detail" onclick="showDetail(8)" title="Detail">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="load-more">
@@ -378,7 +754,7 @@
                         <p>Untuk pembelian pertama Anda</p>
                         <div class="promo-footer">
                             <small><i class="far fa-calendar-alt"></i> Berlaku hingga 31 Des 2024</small>
-                            <button class="btn-promo">Klaim Sekarang</button>
+                            <button class="btn-promo" onclick="claimPromo(1)">Klaim Sekarang</button>
                         </div>
                     </div>
                 </div>
@@ -393,7 +769,7 @@
                         <p>Untuk menu minuman setiap hari Jumat</p>
                         <div class="promo-footer">
                             <small><i class="fas fa-info-circle"></i> Min. pembelian Rp 50.000</small>
-                            <button class="btn-promo">Lihat Syarat</button>
+                            <button class="btn-promo" onclick="claimPromo(2)">Lihat Syarat</button>
                         </div>
                     </div>
                 </div>
@@ -408,7 +784,7 @@
                         <p>Dapatkan poin untuk setiap pembelian</p>
                         <div class="promo-footer">
                             <small><i class="fas fa-exchange-alt"></i> Tukar poin dengan menu gratis</small>
-                            <button class="btn-promo">Cek Poin</button>
+                            <button class="btn-promo" onclick="claimPromo(3)">Cek Poin</button>
                         </div>
                     </div>
                 </div>
@@ -447,7 +823,7 @@
         </div>
         
         <div class="cart-body" id="cartBody">
-            <!-- Cart items will be loaded here -->
+            <!-- Cart items will be loaded here by JavaScript -->
             <div class="cart-empty">
                 <i class="fas fa-shopping-cart"></i>
                 <h5>Keranjang Kosong</h5>
@@ -481,9 +857,59 @@
     
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
-    
 
-
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 footer-about">
+                    <a href="/" class="footer-logo">
+                        <i class="fas fa-leaf"></i> Kantin<span>Sehat</span>
+                    </a>
+                    <p>Kantin Sehat menyediakan berbagai pilihan makanan dan minuman sehat dengan bahan organik berkualitas untuk mendukung gaya hidup sehat Anda.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 footer-links">
+                    <h5>Menu</h5>
+                    <ul>
+                        <li><a href="/">Beranda</a></li>
+                        <li><a href="/menu">Menu</a></li>
+                        <li><a href="#promo">Promo</a></li>
+                        <li><a href="/about">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4 footer-links">
+                    <h5>Bantuan</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4 footer-links">
+                    <h5>Kontak</h5>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Sehat No. 123, Jakarta</li>
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@kantinsehat.sch.id</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Kantin Sehat. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- ===== SCRIPTS ===== -->
     <!-- Bootstrap JS -->
@@ -492,7 +918,29 @@
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
-    <!-- Menu Data -->
-    <script src="{{ asset('js/menu.js')}}"></script>
+    <!-- Menu JavaScript -->
+    <script src="js/menu.js"></script>
+    
+    <script>
+        // Function untuk claim promo (frontend only)
+        function claimPromo(promoId) {
+            Swal.fire({
+                title: 'Informasi',
+                text: 'Fitur claim promo akan segera tersedia',
+                icon: 'info',
+                confirmButtonColor: '#001a12'
+            });
+        }
+        
+        // Load more functionality (frontend only)
+        document.getElementById('loadMore')?.addEventListener('click', function() {
+            Swal.fire({
+                title: 'Informasi',
+                text: 'Fitur load more akan diimplementasikan oleh backend',
+                icon: 'info',
+                confirmButtonColor: '#001a12'
+            });
+        });
+    </script>
 </body>
 </html>
